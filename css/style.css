@@ -1166,6 +1166,7 @@ footer {
     width: 50% !important;
   }
   .right-block {
-   margin-top: -90%;
+   margin-top: -90% !important;
   }
+
 }
