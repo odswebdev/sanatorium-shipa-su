@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Санаторий Шипасу предлагает отдых и оздоровление с уникальными процедурами и минеральными водами. Забронируйте номер и получите лучший отдых!">
+  <meta name="keywords" content="санаторий, отдых, оздоровление, минеральные воды, лечение, курорт, Шипасу">
+  <meta name="author" content="Санаторий Шипасу">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="Санаторий Шипасу - Отдых и оздоровление">
+  <meta property="og:description"
+    content="Забронируйте отдых в санатории Шипасу с уникальными процедурами и комфортными номерами.">
+  <meta property="og:image" content="url_изображения_для_ог:image.jpg">
+  <meta property="og:url" content="https://example.com">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Санаторий Шипасу - Отдых и оздоровление">
+  <meta name="twitter:description"
+    content="Забронируйте отдых в санатории Шипасу с уникальными процедурами и комфортными номерами.">
+  <meta name="twitter:image" content="url_изображения_для_ог:image.jpg">
+  <title>Санаторий Шипасу - Отдых и оздоровление</title>
+  <!--  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet"> -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="libs/swiper/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+
+  <div class="main-bg">
+
+    <header class="header">
+      <div class="container header__container">
+        <div class="header__logo">
+          <a href="/"><img src="./img/logo.svg" alt="Логотип санатория Шипасу"></a>
+        </div>
+
+        <nav class="nav header__nav">
+          <ul class="nav__list">
+            <li><a href="#" class="nav__link">Главная</a></li>
+            <li><a href="#" class="nav__link">Лечение</a></li>
+            <li><a href="#" class="nav__link">О нас</a></li>
+            <li><a href="#" class="nav__link">Контакты</a></li>
+          </ul>
+        </nav>
+
+        <a href="#" class="soc__link" aria-label="YouTube">Забронировать номер</a>
+
+        <div class="burger" id="burger">
+          <span></span><span></span><span></span>
+        </div>
+      </div>
+
+      <div class="mobile-menu" id="mobileMenu">
+        <ul class="mobile-menu__list">
+          <li><a href="#" class="nav__link">Главная</a></li>
+          <li><a href="#" class="nav__link">Лечение</a></li>
+          <li><a href="#" class="nav__link">О нас</a></li>
+          <li><a href="#" class="nav__link">Контакты</a></li>
+        </ul>
+      </div>
+    </header>
+
+    <section class="hero">
+      <div class="container hero__container">
+        <div class="hero__content">
+          <h1 class="hero__title">Добро пожаловать в Шипасу!</h1>
+
+          <!--       <form class="booking-form" method="POST">
+            <div class="form-group">
+              <div class="form-select-wrapper">
+                <span class="form-icon">📅</span>
+                <select id="arrival-date" name="arrival-date" class="form-input arrival-select" required
+                  aria-label="Дата заезда">
+                  <option value="">Дата заезда</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="form-select-wrapper">
+                <span class="form-icon">📅</span>
+                <select id="departure-date" name="departure-date" class="form-input departure-select" required
+                  aria-label="Дата выезда">
+                  <option value="">Дата выезда</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="form-select-wrapper">
+                <span class="form-icon">👤</span>
+                <select id="guests" name="guests" class="form-input" required aria-label="Количество гостей">
+                  <option value="">Гости</option>
+                  <option value="1">1 человек</option>
+                  <option value="2">2 человека</option>
+                  <option value="3">3 человека</option>
+                  <option value="4">4 человека</option>
+                  <option value="5">5 человек</option>
+                </select>
+              </div>
+            </div>
+
+            <button type="button" class="btn btn-primary" id="open-booking-popup">Забронировать</button>
+          </form> -->
+
+          <!-- Popup форма бронирования -->
+          <!-- <div id="booking-popup" class="popup hidden">
+            <form id="popup-booking-form">
+              <h2>Форма бронирования</h2>
+              <input type="text" name="name" placeholder="Ваше имя" required>
+              <input type="email" name="email" placeholder="Ваш email" required>
+              <input type="tel" name="phone" placeholder="Телефон" required>
+              <button type="submit" class="btn btn-primary">Отправить</button>
+            </form>
+          </div> -->
+
+          <!--      <form>
+            <div class="custom-select">
+              <div class="selected">
+                <img src="./img/calendar.svg" alt="" />
+                <span>Дата заезда</span>
+              </div>
+              <div class="options">
+                <div class="option" data-value="Дата заезда">
+                  Дата заезда
+                </div>
+                <div class="option" data-value="Дата заезда1">Дата заезда1</div>
+                <div class="option" data-value="Дата заезда2">Дата заезда2</div>
+              </div>
+            </div>
+            <div class="custom-select">
+              <div class="selected">
+                <img src="./img/calendar.svg" alt="" />
+                <span>Дата заезда</span>
+              </div>
+              <div class="options">
+                <div class="option" data-value="Дата заезда">
+                  Дата заезда
+                </div>
+                <div class="option" data-value="Дата заезда1">Дата заезда1</div>
+                <div class="option" data-value="Дата заезда2">Дата заезда2</div>
+              </div>
+            </div>
+            <div class="custom-select">
+              <div class="selected">
+                <img src="./img/peoples.svg" alt="" />
+                <span>Гости</span>
+              </div>
+              <div class="options">
+                <div class="option" data-value="Гости">
+                  Гости
+                </div>
+                <div class="option" data-value="Гости1">Гости1</div>
+                <div class="option" data-value="Гости2">Гости2</div>
+              </div>
+            </div>
+            <button class="soc__link">Забронировать</button>
+          </form> -->
+
+
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <section class="about" id="about">
+    <div class="container about__container">
+      <div class="about__content">
+        <div class="about__info">
+          <p>Немного про нас</p>
+          <h2 class="about__title">Отдых и оздоровление в лечебных водах</h2>
+        </div>
+        <div class="about__wrapper">
+          <div class="about__desc">Санаторий "Шипа су" - это райский уголок среди пустынной местности Туркестана.
+            Местные нередко называют эту территорию
+            Оазисом и мечтают искупаться в роскошном бассейне. Что уж говорить о местной минеральной воде, которая
+            излечила уже не
+            одну тысячу довольных постояльцев.<br />
+            <br />
+            Благодаря наличию уникальных природных лечебных факторов и развитой инфраструктуре, квалифицированный
+            персонал санатория
+            всегда найдет для Вас оптимальное сочетание эффективного лечения и приятного отдыха.<br />
+            <br />
+            Здоровое сбалансированное питание, комфортные условия проживания, широкий спектр СПА-услуг и сервиса
+            позволят получить
+            неисчерпаемый заряд бодрости, восстановят силы и продлят молодость.
+          </div>
+          <img src="./img/lechenie.png"
+            alt="Лечение в санатории Шипасу — оздоровление с использованием минеральных вод">
+        </div>
+      </div>
+  </section>
+
+  <section class="cards">
+    <div class="container">
+      <h2 class="section-title">Что мы предлагаем</h2>
+      <div class="cards2">
+        <div class="card">
+          <img src="./img/rooms.png" alt="Пример" class="card-img">
+          <div class="card-content">
+            <h3 class="card-title">Комфортные номера</h3>
+            <ul class="card-list">
+              <li>Ваш комфорт - наши заботы</li>
+              <li>Свежий ремонт</li>
+              <li>Услужливый персонал</li>
+            </ul>
+          </div>
+        </div>
+        <div class="card">
+          <img src="./img/procedure.png" alt="Пример" class="card-img">
+          <div class="card-content">
+            <h3 class="card-title">Оздоровительные процедуры</h3>
+            <ul class="card-list">
+              <li>Циркулярный душ</li>
+              <li>Свежая питьевая вода</li>
+              <li>Здоровье для всей семьи</li>
+            </ul>
+          </div>
+        </div>
+        <div class="card">
+          <img src="./img/kitchen.png" alt="Пример" class="card-img">
+          <div class="card-content">
+            <h3 class="card-title">Национальная кухня</h3>
+            <ul class="card-list">
+              <li>Вкусно</li>
+              <li>Полезно</li>
+              <li>Уникально</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec-cosmetolog">
+    <div class="container">
+      <div class="cosmetolog-grid">
+        <div class="cosmetolog-inner-wrapper">
+          <img src="./img/lechenie2.png" alt="Процедуры и лечение в санатории Шипасу" class="background-image">
+          <img src="./img/cosmetologiya.png" alt="Косметологические процедуры и услуги в Шипасу" class="overlay-image">
+        </div>
+        <div class="cosmetolog-content">
+          <h2 class="cosmetolog-section-title">Услуги лечения и косметологии</h2>
+          <div class="cosmetolog-desc">
+            <p>Среди множества высокоэффективных курсов лечения встречаются такие услуги, как грязевые ванны,
+              физиотерапия, профилактика и лечение кожных заболеваний, гайморитов и заболеваний печени. А благодаря
+              нашим специалистам в сфере косметологии ваша кожа станет нежнее, чем кожа младенца.<br><br>
+              Здесь круглогодично ведется работа, чтобы каждый отдыхающий был окружен вниманием и находился в
+              благоприятной обстановке.<br><br>
+              Для отдыхающих и пациентов санатория мы создали и регулярно поддерживаем условия, при которых каждый
+              чувствует себя в дружественной и спокойной обстановке.
+            </p>
+          </div>
+          <a href="#"><span>Подробнее</span>&nbsp;<svg width="16" height="16" viewBox="0 0 24 16" fill="none"
+              xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M0.187805 7.69112C0.187805 7.9151 0.276781 8.12991 0.43516 8.28829C0.593538 8.44667 0.808346 8.53564 1.03233 8.53564L20.9512 8.53564L15.6358 13.8494C15.4772 14.008 15.3881 14.223 15.3881 14.4473C15.3881 14.6716 15.4772 14.8866 15.6358 15.0452C15.7944 15.2038 16.0095 15.2929 16.2337 15.2929C16.458 15.2929 16.6731 15.2038 16.8316 15.0452L23.5878 8.28904C23.6665 8.2106 23.7289 8.1174 23.7714 8.0148C23.814 7.9122 23.8359 7.80221 23.8359 7.69112C23.8359 7.58004 23.814 7.47005 23.7714 7.36744C23.7289 7.26484 23.6665 7.17165 23.5878 7.0932L16.8316 0.337023C16.7531 0.258502 16.6599 0.196217 16.5573 0.153722C16.4547 0.111227 16.3448 0.0893555 16.2337 0.0893555C16.0095 0.0893555 15.7944 0.178444 15.6358 0.337023C15.4772 0.495601 15.3881 0.71068 15.3881 0.934944C15.3881 1.15921 15.4772 1.37429 15.6358 1.53287L20.9512 6.8466L1.03233 6.8466C0.808346 6.8466 0.593538 6.93558 0.43516 7.09396C0.276781 7.25233 0.187805 7.46714 0.187805 7.69112Z"
+                fill="black" />
+            </svg></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec-dos">
+    <div class="container">
+      <div class="dos-grid">
+        <div class="dos-col-left">
+          <h2 class="dos-section-title">Развлечения и достопримечательности</h2>
+          <div class="dos-content">
+            <div class="dos-img"><img src="./img/dostoprimechatelnost1.png" alt=""></div>
+            <div class="doc-content-wrapper">
+              <div class="dos-text">
+                <p>Вы можете воспользоваться экскурсионными услугами. Посетите ставшие уже историческими места –
+                  Каратауский заповедник, Отрарский оазис, Мавзолей Ходжи Ахмеда Ясави.<br /><br />
+                  Сочетание активного отдыха и релакса поможет восстановить силы. Новая трудовая неделя начнется «с
+                  чистого листа».
+                </p>
+              </div>
+              <a class="link-dos" href="#"><span>Подробнее</span>&nbsp;<svg width="16" height="16" viewBox="0 0 24 16"
+                  fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M0.187805 7.69112C0.187805 7.9151 0.276781 8.12991 0.43516 8.28829C0.593538 8.44667 0.808346 8.53564 1.03233 8.53564L20.9512 8.53564L15.6358 13.8494C15.4772 14.008 15.3881 14.223 15.3881 14.4473C15.3881 14.6716 15.4772 14.8866 15.6358 15.0452C15.7944 15.2038 16.0095 15.2929 16.2337 15.2929C16.458 15.2929 16.6731 15.2038 16.8316 15.0452L23.5878 8.28904C23.6665 8.2106 23.7289 8.1174 23.7714 8.0148C23.814 7.9122 23.8359 7.80221 23.8359 7.69112C23.8359 7.58004 23.814 7.47005 23.7714 7.36744C23.7289 7.26484 23.6665 7.17165 23.5878 7.0932L16.8316 0.337023C16.7531 0.258502 16.6599 0.196217 16.5573 0.153722C16.4547 0.111227 16.3448 0.0893555 16.2337 0.0893555C16.0095 0.0893555 15.7944 0.178444 15.6358 0.337023C15.4772 0.495601 15.3881 0.71068 15.3881 0.934944C15.3881 1.15921 15.4772 1.37429 15.6358 1.53287L20.9512 6.8466L1.03233 6.8466C0.808346 6.8466 0.593538 6.93558 0.43516 7.09396C0.276781 7.25233 0.187805 7.46714 0.187805 7.69112Z"
+                    fill="black" />
+                </svg></a>
+            </div>
+          </div>
+        </div>
+        <div class="dos-col-right">
+          <img src="./img/dostoprimechatelnost2.png" alt="">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec-rooms">
+    <div class="container">
+      <h2 class="rooms-section-title"><span>Номера</span></h2>
+      <div class="rooms-grid">
+        <div class="room-el">
+          <div class="room-img"><img src="./img/room1.png" alt=""></div>
+          <div class="room-content-wrapper">
+            <div class="room-title">Стандарт</div>
+            <div class="room-price">От <span>18 000</span> тенге/сутки.</div>
+            <div class="character-list">Квадратура номера 20 кв.м.<br />
+              Балкон 3 кв.м<br />
+              Душ и все принадлежности<br />
+              на 2 двоих отдельные раздельные кровати</div>
+            <a href="#"><span>Подробнее</span>&nbsp;<svg width="16" height="16" viewBox="0 0 24 16" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                  d="M0.187805 7.69112C0.187805 7.9151 0.276781 8.12991 0.43516 8.28829C0.593538 8.44667 0.808346 8.53564 1.03233 8.53564L20.9512 8.53564L15.6358 13.8494C15.4772 14.008 15.3881 14.223 15.3881 14.4473C15.3881 14.6716 15.4772 14.8866 15.6358 15.0452C15.7944 15.2038 16.0095 15.2929 16.2337 15.2929C16.458 15.2929 16.6731 15.2038 16.8316 15.0452L23.5878 8.28904C23.6665 8.2106 23.7289 8.1174 23.7714 8.0148C23.814 7.9122 23.8359 7.80221 23.8359 7.69112C23.8359 7.58004 23.814 7.47005 23.7714 7.36744C23.7289 7.26484 23.6665 7.17165 23.5878 7.0932L16.8316 0.337023C16.7531 0.258502 16.6599 0.196217 16.5573 0.153722C16.4547 0.111227 16.3448 0.0893555 16.2337 0.0893555C16.0095 0.0893555 15.7944 0.178444 15.6358 0.337023C15.4772 0.495601 15.3881 0.71068 15.3881 0.934944C15.3881 1.15921 15.4772 1.37429 15.6358 1.53287L20.9512 6.8466L1.03233 6.8466C0.808346 6.8466 0.593538 6.93558 0.43516 7.09396C0.276781 7.25233 0.187805 7.46714 0.187805 7.69112Z"
+                  fill="black" />
+              </svg></a>
+          </div>
+        </div>
+        <div class="room-el">
+          <div class="room-img"><img src="./img/room2.png" alt=""></div>
+          <div class="room-content-wrapper">
+            <div class="room-title">Де люкс</div>
+            <div class="room-price">От <span>25 000</span> тенге/сутки.</div>
+            <div class="character-list">Квадратура номера 20 кв.м.<br />
+              Балкон 3 кв.м.<br />
+              Душ и все принадлежности<br />
+              на 2 персоны (двухспалка)</div>
+            <a href="#"><span>Подробнее</span>&nbsp;<svg width="16" height="16" viewBox="0 0 24 16" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                  d="M0.187805 7.69112C0.187805 7.9151 0.276781 8.12991 0.43516 8.28829C0.593538 8.44667 0.808346 8.53564 1.03233 8.53564L20.9512 8.53564L15.6358 13.8494C15.4772 14.008 15.3881 14.223 15.3881 14.4473C15.3881 14.6716 15.4772 14.8866 15.6358 15.0452C15.7944 15.2038 16.0095 15.2929 16.2337 15.2929C16.458 15.2929 16.6731 15.2038 16.8316 15.0452L23.5878 8.28904C23.6665 8.2106 23.7289 8.1174 23.7714 8.0148C23.814 7.9122 23.8359 7.80221 23.8359 7.69112C23.8359 7.58004 23.814 7.47005 23.7714 7.36744C23.7289 7.26484 23.6665 7.17165 23.5878 7.0932L16.8316 0.337023C16.7531 0.258502 16.6599 0.196217 16.5573 0.153722C16.4547 0.111227 16.3448 0.0893555 16.2337 0.0893555C16.0095 0.0893555 15.7944 0.178444 15.6358 0.337023C15.4772 0.495601 15.3881 0.71068 15.3881 0.934944C15.3881 1.15921 15.4772 1.37429 15.6358 1.53287L20.9512 6.8466L1.03233 6.8466C0.808346 6.8466 0.593538 6.93558 0.43516 7.09396C0.276781 7.25233 0.187805 7.46714 0.187805 7.69112Z"
+                  fill="black" />
+              </svg></a>
+          </div>
+        </div>
+        <div class="room-el">
+          <div class="room-img"><img src="./img/room3.png" alt=""></div>
+          <div class="room-content-wrapper">
+            <div class="room-title">Люкс</div>
+            <div class="room-price">От <span>30 000</span> тенге/сутки.</div>
+            <div class="character-list">Квадратура номера 40 кв.м.<br />
+              Спальня 20 кв.м.<br />
+              Гостиная 20 кв.м.<br />
+              Балкон 6 кв. м.<br />
+              Душ и все принадлежности<br />
+              на 2 персоны<br />
+              и плюс одна кроватка для вашего малыша</div>
+            <a href="#"><span>Подробнее</span>&nbsp;<svg width="16" height="16" viewBox="0 0 24 16" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                  d="M0.187805 7.69112C0.187805 7.9151 0.276781 8.12991 0.43516 8.28829C0.593538 8.44667 0.808346 8.53564 1.03233 8.53564L20.9512 8.53564L15.6358 13.8494C15.4772 14.008 15.3881 14.223 15.3881 14.4473C15.3881 14.6716 15.4772 14.8866 15.6358 15.0452C15.7944 15.2038 16.0095 15.2929 16.2337 15.2929C16.458 15.2929 16.6731 15.2038 16.8316 15.0452L23.5878 8.28904C23.6665 8.2106 23.7289 8.1174 23.7714 8.0148C23.814 7.9122 23.8359 7.80221 23.8359 7.69112C23.8359 7.58004 23.814 7.47005 23.7714 7.36744C23.7289 7.26484 23.6665 7.17165 23.5878 7.0932L16.8316 0.337023C16.7531 0.258502 16.6599 0.196217 16.5573 0.153722C16.4547 0.111227 16.3448 0.0893555 16.2337 0.0893555C16.0095 0.0893555 15.7944 0.178444 15.6358 0.337023C15.4772 0.495601 15.3881 0.71068 15.3881 0.934944C15.3881 1.15921 15.4772 1.37429 15.6358 1.53287L20.9512 6.8466L1.03233 6.8466C0.808346 6.8466 0.593538 6.93558 0.43516 7.09396C0.276781 7.25233 0.187805 7.46714 0.187805 7.69112Z"
+                  fill="black" />
+              </svg></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!--  <section class="gallery-section">
+    <div class="container">
+      <h2>Галерея</h2>
+
+      <div class="swiper gallery-swiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide" data-img="./img/img-g1.png">
+            <img src="./img/img-g1.png" alt="Фото 1">
+          </div>
+          <div class="swiper-slide" data-img="./img/img-g2.png">
+            <img src="./img/img-g2.png" alt="Фото 2">
+          </div>
+          <div class="swiper-slide" data-img="./img/img-g3.png">
+            <img src="./img/img-g3.png" alt="Фото 3">
+          </div>
+          <div class="swiper-slide" data-img="./img/img-g4.png">
+            <img src="./img/img-g4.png" alt="Фото 4">
+          </div>
+          <div class="swiper-slide" data-img="./img/img-g1.png">
+            <img src="./img/img-g1.png" alt="Фото 1">
+          </div>
+          <div class="swiper-slide" data-img="./img/img-g2.png">
+            <img src="./img/img-g2.png" alt="Фото 2">
+          </div>
+          <div class="swiper-slide" data-img="./img/img-g3.png">
+            <img src="./img/img-g3.png" alt="Фото 3">
+          </div>
+          <div class="swiper-slide" data-img="./img/img-g4.png">
+            <img src="./img/img-g4.png" alt="Фото 4">
+          </div>
+        </div>
+
+        <div class="swiper-button-prev custom-nav"></div>
+        <div class="swiper-button-next custom-nav"></div>
+
+      </div>
+    </div>
+
+
+  </section> -->
+
+  <!-- Модальное окно -->
+  <!-- <div class="modal" id="imageModal">
+    <span class="close-modal">&times;</span>
+    <div class="modal-content">
+      <img src="" alt="Увеличенное изображение" id="modalImage">
+    </div>
+  </div> -->
+
+  <section class="sec-contacts">
+    <div class="sec-inner container">
+      <div class="left-block">
+        <img src="./img/contacts-img.png" alt="Картинка">
+        <div class="info-box">
+          <div class="info-box-element">
+            <h4>Телефон</h4>
+            <p>+996 (509) 04-23-45</p>
+          </div>
+          <div class="info-box-element">
+            <h4>Телефон</h4>
+            <p>+996 (509) 04-23-45</p>
+          </div>
+          <div class="info-box-element">
+            <h4>Телефон</h4>
+            <p>+996 (509) 04-23-45</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="right-block">
+        <h2>Свяжитесь с нами</h2>
+        <p>
+          Мы с радостью ответим на все ваши вопросы и поможем в выборе.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container footer-container">
+
+      <!-- Колонка 1 -->
+      <div class="footer-column">
+        <div class="logo"><img src="./img/logo.svg" alt=""></div>
+        <ul>
+          <li><a href="#">О нас</a></li>
+          <li><a href="#">Лечение</a></li>
+          <li><a href="#">Развлечения</a></li>
+          <li><a href="#">Косметология</a></li>
+          <li><a href="#">Контакты</a></li>
+        </ul>
+
+        <p>&copy; Shipasu.kz. Все права защищены, 2025</p>
+      </div>
+
+      <!-- Колонка 2 -->
+      <div class="footer-column">
+        <h4>Адрес</h4>
+        <div class="address">
+          Туркестанская область,<br />
+          город Туркестан<br />
+          157 квартал, здание № 037
+        </div>
+      </div>
+
+      <!-- Колонка 3 -->
+      <div class="footer-column">
+        <h4>Контакты</h4>
+        <div class="contact-info">
+          <ul>
+            <li>+77717000998</li>
+            <li>+77023358888</li>
+            <li>+7(725)33 7-10-67</li>
+            <li>shipa_su18@mail.ru</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Колонка 4 -->
+      <div class="footer-column">
+        <h4>Подпишитесь</h4>
+        <div class="social-icons">
+          <a href="#" title="Facebook"><img src="./img/fb.svg" alt=""> <span>/shipasu.kz</span></a>
+          <a href="#" title="Instagram"><img src="./img/insta.svg" alt=""> <span>/shipasu.kz</span></a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="libs/swiper/swiper-bundle.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+
+</html>
