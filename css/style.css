@@ -1170,3 +1170,10 @@ footer {
   }
 
 }
+
+@media screen and (max-width: 1024px), screen and (max-device-width: 1024px) {
+  .right-block {
+    margin-top: -90% !important;
+  }
+}
+
