@@ -1166,14 +1166,15 @@ footer {
     width: 50% !important;
   }
   .right-block {
-   margin-top: -90% !important;
+   margin-top: -125% !important;
   }
 
 }
 
 @media screen and (max-width: 1024px), screen and (max-device-width: 1024px) {
   .right-block {
-    margin-top: -90% !important;
+    margin-top: -125% !important;
   }
 }
+
 
