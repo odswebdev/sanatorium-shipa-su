@@ -1,12 +1,25 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
 
+html, body {
+  overflow-x: hidden !important;
+  max-width: 100%;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+img, video {
+  max-width: 100%;
+  height: auto;
+}
+
 html {
   scroll-behavior:smooth;
 }
 body {
   font-family:'Raleway',sans-serif;
   color:#000;
-  overflow-x:hidden;
 }
 .main-bg {
   margin-bottom:160px !important;
@@ -1139,4 +1152,17 @@ footer {
 .form-select-wrapper {
   display: flex;
   align-items: baseline;
+}
+
+@media (max-width: 768px) {
+  .gallery-section h2 {
+    left: 0 !important;
+  }
+  .gallery-section h2::before {
+    left: 0 !important;
+    width: 20% !important;
+  }
+  .rooms-section-title::after {
+    width: 50% !important;
+  }
 }
