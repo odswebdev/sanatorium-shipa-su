@@ -192,6 +192,9 @@ body {
 .hero {
   padding-top:65px !important;
 }
+.hero__p2 {
+    padding-top:200px !important;
+}
 .hero__content {
   margin-top:0px !important;
 }
@@ -201,6 +204,11 @@ body {
   text-transform:uppercase;
   text-align:center;
   margin-bottom:40px;
+}
+.hero__page2 {
+  font-size: 38px !important;
+  text-align: center;
+word-break: break-word;
 }
 .main-bg {
   margin-bottom:50px !important;
@@ -251,6 +259,34 @@ select {
   /* Чтобы не было обрезки контента */
   min-height:100vh;
 }
+.main-bg2 {
+  background:url('../img/recognitions.png') no-repeat center bottom;
+  background-size:cover;
+  color:white;
+  position:relative;
+  padding-bottom:50px;
+  /* Чтобы не было обрезки контента */
+  min-height:100vh;
+}
+.hero__page2 {
+  font-size: 99px;
+  text-align: center;
+}
+
+.btn__order__page2 {
+padding: 15px 30px;
+gap: 10px;
+width: 267px;
+height: 51px;
+background: radial-gradient(100% 2636.43% at 100% 50%, #131953 0%, #004E8D 100%), #E1963C;
+border-radius: 30px;
+font-size: 18px;
+}
+
+.info-box-page2 {
+  left: 0% !important;
+}
+
 form {
   display:flex;
   gap:20px;
@@ -994,6 +1030,9 @@ img {
   flex-direction:column;
   width:100%;
 }
+.info-box-page2 {
+  left:0% !important;
+}
 .info-box-element h4 {
   margin:0 0 10px;
   font-family:'PlayfairDisplay';
@@ -1037,6 +1076,12 @@ img {
   margin-top:-40px;
   transform:translateY(50%);
 }
+.info-box-page2 {
+  position: absolute !important;
+  margin-top:-40px;
+  transform:translate(0%);
+}
+
 }
 
 @media (max-width:480px) {
@@ -1166,15 +1211,6 @@ footer {
     width: 50% !important;
   }
   .right-block {
-   margin-top: -125% !important;
-  }
-
-}
-
-@media screen and (max-width: 1024px), screen and (max-device-width: 1024px) {
-  .right-block {
-    margin-top: -125% !important;
+   margin-top: -90%;
   }
 }
-
-
