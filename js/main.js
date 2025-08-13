@@ -239,53 +239,84 @@ $(document).ready(function () {
     });
   }); */
 
-  // Получаем элементы даты заезда и даты выезда
-  const arrivalDateInput = document.getElementById("arrival-date");
-  const departureDateInput = document.getElementById("departure-date");
-
-  // Функция для обновления минимальной даты выезда
-  function updateDepartureDate() {
-    const arrivalDate = new Date(arrivalDateInput.value);
-    arrivalDate.setDate(arrivalDate.getDate() + 1);
-    const minDepartureDate = arrivalDate.toISOString().split("T")[0];
-    departureDateInput.setAttribute("min", minDepartureDate);
-    if (new Date(departureDateInput.value) < arrivalDate) {
-      departureDateInput.value = minDepartureDate;
-    }
-  }
-
-  arrivalDateInput.addEventListener("change", updateDepartureDate);
-  document.addEventListener("DOMContentLoaded", updateDepartureDate);
-
-  // Функция для проверки формы перед отправкой
-  function validateBookingForm(event) {
-    const arrivalDate = new Date(arrivalDateInput.value);
-    const departureDate = new Date(departureDateInput.value);
-
-    if (departureDate <= arrivalDate) {
-      event.preventDefault();
-      alert("Дата выезда должна быть позже даты заезда!");
-      return false;
-    }
-
-    const guestsSelect = document.getElementById("guests");
-    if (guestsSelect.value === "") {
-      event.preventDefault();
-      alert("Пожалуйста, выберите количество гостей.");
-      return false;
-    }
-
-    return true;
-  }
-
-  const bookingForm = document.querySelector(".booking-form");
-  bookingForm.addEventListener("submit", validateBookingForm);
-
-  function setDefaultArrivalDate() {
+  /* function setDefaultArrivalDate() {
     const today = new Date();
     const formattedDate = today.toISOString().split("T")[0];
     arrivalDateInput.value = formattedDate;
-  }
+  } */
 
-  document.addEventListener("DOMContentLoaded", setDefaultArrivalDate);
+  //document.addEventListener("DOMContentLoaded", setDefaultArrivalDate);
+
+  let departurePicker;
+
+  const arrivalPicker = flatpickr("#arrival", {
+    dateFormat: "d.m.Y",
+    minDate: "today",
+    onChange: function (selectedDates) {
+      if (selectedDates.length > 0) {
+        const minDeparture = new Date(selectedDates[0]);
+        minDeparture.setDate(minDeparture.getDate() + 1); // следующий день
+        departurePicker.set("minDate", minDeparture);
+        departurePicker.setDate(minDeparture, true);
+      }
+    },
+  });
+
+  departurePicker = flatpickr("#departure", {
+    dateFormat: "d.m.Y",
+    minDate: "today",
+  });
+
+  const openPopupBtn = document.getElementById("openPopup");
+  const popupOverlay = document.getElementById("popupOverlay");
+  const closePopupBtn = document.getElementById("closePopup");
+
+  openPopupBtn.addEventListener("click", () => {
+    const arrival = document.getElementById("arrival").value;
+    const departure = document.getElementById("departure").value;
+    const guests = document.getElementById("guests").value;
+
+    if (!arrival || !departure || !guests) {
+      alert("Пожалуйста, заполните все поля");
+      return;
+    }
+
+    document.getElementById("popupArrival").textContent = arrival;
+    document.getElementById("popupDeparture").textContent = departure;
+    document.getElementById("popupGuests").textContent = guests;
+    popupOverlay.style.display = "flex";
+  });
+
+  closePopupBtn.addEventListener("click", () => {
+    popupOverlay.style.display = "none";
+  });
+
+  popupOverlay.addEventListener("click", (e) => {
+    if (e.target === popupOverlay) {
+      popupOverlay.style.display = "none";
+    }
+  });
+
+  /* const modal = document.getElementById("modal");
+  const modalImg = document.getElementById("modal-img");
+  const captionText = document.getElementById("caption");
+  const closeBtn = document.querySelector(".close");
+
+  document.querySelectorAll(".block-two img").forEach((img) => {
+    img.addEventListener("click", () => {
+      modal.style.display = "block";
+      modalImg.src = img.src;
+      captionText.innerHTML = img.alt;
+    });
+  });
+
+  closeBtn.addEventListener("click", () => {
+    modal.style.display = "none";
+  });
+
+  window.addEventListener("click", (e) => {
+    if (e.target === modal) {
+      modal.style.display = "none";
+    }
+  }); */
 });

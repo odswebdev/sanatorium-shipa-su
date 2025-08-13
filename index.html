@@ -27,6 +27,7 @@
   <link rel="stylesheet" href="libs/swiper/swiper-bundle.min.css" />
   <link rel="stylesheet" href="css/reset.css" />
   <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
 </head>
 
 <body>
@@ -36,19 +37,19 @@
     <header class="header">
       <div class="container header__container">
         <div class="header__logo">
-          <a href="/"><img src="./img/logo.svg" alt="Логотип санатория Шипасу"></a>
+          <a href="/index.html"><img src="./img/logo.svg" alt="Логотип санатория Шипасу"></a>
         </div>
 
         <nav class="nav header__nav">
           <ul class="nav__list">
-            <li><a href="#" class="nav__link">Главная</a></li>
-            <li><a href="#" class="nav__link">Лечение</a></li>
-            <li><a href="#" class="nav__link">О нас</a></li>
-            <li><a href="#" class="nav__link">Контакты</a></li>
+            <li><a href="index.html" class="nav__link">Главная</a></li>
+            <li><a href="treatment.html" class="nav__link">Лечение</a></li>
+            <li><a href="aboutus.html" class="nav__link">О нас</a></li>
+            <li><a href="contacts.html" class="nav__link">Контакты</a></li>
           </ul>
         </nav>
 
-        <a href="#" class="soc__link" aria-label="YouTube">Забронировать номер</a>
+        <a href="#" class="soc__link">Забронировать номер</a>
 
         <div class="burger" id="burger">
           <span></span><span></span><span></span>
@@ -57,10 +58,10 @@
 
       <div class="mobile-menu" id="mobileMenu">
         <ul class="mobile-menu__list">
-          <li><a href="#" class="nav__link">Главная</a></li>
-          <li><a href="#" class="nav__link">Лечение</a></li>
-          <li><a href="#" class="nav__link">О нас</a></li>
-          <li><a href="#" class="nav__link">Контакты</a></li>
+          <li><a href="/index.html" class="nav__link">Главная</a></li>
+          <li><a href="/treatment.html" class="nav__link">Лечение</a></li>
+          <li><a href="/aboutus.html" class="nav__link">О нас</a></li>
+          <li><a href="/contacts.html" class="nav__link">Контакты</a></li>
         </ul>
       </div>
     </header>
@@ -70,98 +71,54 @@
         <div class="hero__content">
           <h1 class="hero__title">Добро пожаловать в Шипасу!</h1>
 
-          <!--       <form class="booking-form" method="POST">
-            <div class="form-group">
-              <div class="form-select-wrapper">
-                <span class="form-icon">📅</span>
-                <select id="arrival-date" name="arrival-date" class="form-input arrival-select" required
-                  aria-label="Дата заезда">
-                  <option value="">Дата заезда</option>
-                </select>
-              </div>
+          <form class="booking-form" id="bookingForm">
+            <div class="booking-field">
+              <i class="fa-regular fa-calendar"></i>
+              <input type="text" id="arrival" placeholder="Дата заезда" readonly>
             </div>
-
-            <div class="form-group">
-              <div class="form-select-wrapper">
-                <span class="form-icon">📅</span>
-                <select id="departure-date" name="departure-date" class="form-input departure-select" required
-                  aria-label="Дата выезда">
-                  <option value="">Дата выезда</option>
-                </select>
-              </div>
+            <div class="booking-field">
+              <i class="fa-regular fa-calendar"></i>
+              <input type="text" id="departure" placeholder="Дата выезда" readonly>
             </div>
-
-            <div class="form-group">
-              <div class="form-select-wrapper">
-                <span class="form-icon">👤</span>
-                <select id="guests" name="guests" class="form-input" required aria-label="Количество гостей">
-                  <option value="">Гости</option>
-                  <option value="1">1 человек</option>
-                  <option value="2">2 человека</option>
-                  <option value="3">3 человека</option>
-                  <option value="4">4 человека</option>
-                  <option value="5">5 человек</option>
-                </select>
-              </div>
+            <div class="booking-field">
+              <i class="fa fa-user"></i>
+              <select id="guests">
+                <option value="">Гости</option>
+                <option value="1">1 гость</option>
+                <option value="2">2 гостя</option>
+                <option value="3">3 гостя</option>
+                <option value="4">4 гостя</option>
+                <option value="5">5 гостей</option>
+              </select>
             </div>
+            <button type="button" class="booking-btn" id="openPopup">Забронировать</button>
+          </form>
 
-            <button type="button" class="btn btn-primary" id="open-booking-popup">Забронировать</button>
-          </form> -->
-
-          <!-- Popup форма бронирования -->
-          <!-- <div id="booking-popup" class="popup hidden">
-            <form id="popup-booking-form">
+          <div class="popup-overlay" id="popupOverlay">
+            <div class="popup">
+              <span class="close-popup" id="closePopup">&times;</span>
               <h2>Форма бронирования</h2>
-              <input type="text" name="name" placeholder="Ваше имя" required>
-              <input type="email" name="email" placeholder="Ваш email" required>
-              <input type="tel" name="phone" placeholder="Телефон" required>
-              <button type="submit" class="btn btn-primary">Отправить</button>
-            </form>
-          </div> -->
+              <p><i class="fa-regular fa-calendar"></i><b>Дата заезда:</b> <span id="popupArrival"></span></p>
+              <p><i class="fa-regular fa-calendar"></i><b>Дата выезда:</b> <span id="popupDeparture"></span></p>
+              <p><i class="fa fa-user"></i><b>Гости:</b> <span id="popupGuests"></span></p>
+              <input type="text" placeholder="Ваше имя" required>
+              <input type="email" placeholder="Ваш email" required>
+              <input type="tel" placeholder="Телефон" required>
+              <button class="booking-btn">Отправить</button>
+            </div>
+          </div>
 
-          <!--      <form>
-            <div class="custom-select">
-              <div class="selected">
-                <img src="./img/calendar.svg" alt="" />
-                <span>Дата заезда</span>
-              </div>
-              <div class="options">
-                <div class="option" data-value="Дата заезда">
-                  Дата заезда
-                </div>
-                <div class="option" data-value="Дата заезда1">Дата заезда1</div>
-                <div class="option" data-value="Дата заезда2">Дата заезда2</div>
-              </div>
-            </div>
-            <div class="custom-select">
-              <div class="selected">
-                <img src="./img/calendar.svg" alt="" />
-                <span>Дата заезда</span>
-              </div>
-              <div class="options">
-                <div class="option" data-value="Дата заезда">
-                  Дата заезда
-                </div>
-                <div class="option" data-value="Дата заезда1">Дата заезда1</div>
-                <div class="option" data-value="Дата заезда2">Дата заезда2</div>
-              </div>
-            </div>
-            <div class="custom-select">
-              <div class="selected">
-                <img src="./img/peoples.svg" alt="" />
-                <span>Гости</span>
-              </div>
-              <div class="options">
-                <div class="option" data-value="Гости">
-                  Гости
-                </div>
-                <div class="option" data-value="Гости1">Гости1</div>
-                <div class="option" data-value="Гости2">Гости2</div>
-              </div>
-            </div>
-            <button class="soc__link">Забронировать</button>
-          </form> -->
+          <!-- Кнопка прокрутки вниз -->
+          <button class="scroll-down"
+            onclick="window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' })">
+            <i class="fa-solid fa-arrow-down"></i>
+          </button>
 
+          <!-- Мобильные иконки -->
+          <div class="mobile-icons">
+            <a href="https://wa.me/79999999999" target="_blank"><i class="fab fa-whatsapp"></i></a>
+            <a href="tel:+79999999999" class="phone"><i class="fa-solid fa-phone"></i></a>
+          </div>
 
         </div>
       </div>
@@ -257,8 +214,8 @@
               чувствует себя в дружественной и спокойной обстановке.
             </p>
           </div>
-          <a href="#"><span>Подробнее</span>&nbsp;<svg width="16" height="16" viewBox="0 0 24 16" fill="none"
-              xmlns="http://www.w3.org/2000/svg">
+          <a href="treatment.html"><span>Подробнее</span>&nbsp;<svg width="16" height="16" viewBox="0 0 24 16"
+              fill="none" xmlns="http://www.w3.org/2000/svg">
               <path fill-rule="evenodd" clip-rule="evenodd"
                 d="M0.187805 7.69112C0.187805 7.9151 0.276781 8.12991 0.43516 8.28829C0.593538 8.44667 0.808346 8.53564 1.03233 8.53564L20.9512 8.53564L15.6358 13.8494C15.4772 14.008 15.3881 14.223 15.3881 14.4473C15.3881 14.6716 15.4772 14.8866 15.6358 15.0452C15.7944 15.2038 16.0095 15.2929 16.2337 15.2929C16.458 15.2929 16.6731 15.2038 16.8316 15.0452L23.5878 8.28904C23.6665 8.2106 23.7289 8.1174 23.7714 8.0148C23.814 7.9122 23.8359 7.80221 23.8359 7.69112C23.8359 7.58004 23.814 7.47005 23.7714 7.36744C23.7289 7.26484 23.6665 7.17165 23.5878 7.0932L16.8316 0.337023C16.7531 0.258502 16.6599 0.196217 16.5573 0.153722C16.4547 0.111227 16.3448 0.0893555 16.2337 0.0893555C16.0095 0.0893555 15.7944 0.178444 15.6358 0.337023C15.4772 0.495601 15.3881 0.71068 15.3881 0.934944C15.3881 1.15921 15.4772 1.37429 15.6358 1.53287L20.9512 6.8466L1.03233 6.8466C0.808346 6.8466 0.593538 6.93558 0.43516 7.09396C0.276781 7.25233 0.187805 7.46714 0.187805 7.69112Z"
                 fill="black" />
@@ -283,8 +240,8 @@
                   чистого листа».
                 </p>
               </div>
-              <a class="link-dos" href="#"><span>Подробнее</span>&nbsp;<svg width="16" height="16" viewBox="0 0 24 16"
-                  fill="none" xmlns="http://www.w3.org/2000/svg">
+              <a class="link-dos" href="recognitions.html"><span>Подробнее</span>&nbsp;<svg width="16" height="16"
+                  viewBox="0 0 24 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path fill-rule="evenodd" clip-rule="evenodd"
                     d="M0.187805 7.69112C0.187805 7.9151 0.276781 8.12991 0.43516 8.28829C0.593538 8.44667 0.808346 8.53564 1.03233 8.53564L20.9512 8.53564L15.6358 13.8494C15.4772 14.008 15.3881 14.223 15.3881 14.4473C15.3881 14.6716 15.4772 14.8866 15.6358 15.0452C15.7944 15.2038 16.0095 15.2929 16.2337 15.2929C16.458 15.2929 16.6731 15.2038 16.8316 15.0452L23.5878 8.28904C23.6665 8.2106 23.7289 8.1174 23.7714 8.0148C23.814 7.9122 23.8359 7.80221 23.8359 7.69112C23.8359 7.58004 23.814 7.47005 23.7714 7.36744C23.7289 7.26484 23.6665 7.17165 23.5878 7.0932L16.8316 0.337023C16.7531 0.258502 16.6599 0.196217 16.5573 0.153722C16.4547 0.111227 16.3448 0.0893555 16.2337 0.0893555C16.0095 0.0893555 15.7944 0.178444 15.6358 0.337023C15.4772 0.495601 15.3881 0.71068 15.3881 0.934944C15.3881 1.15921 15.4772 1.37429 15.6358 1.53287L20.9512 6.8466L1.03233 6.8466C0.808346 6.8466 0.593538 6.93558 0.43516 7.09396C0.276781 7.25233 0.187805 7.46714 0.187805 7.69112Z"
                     fill="black" />
@@ -444,13 +401,13 @@
 
       <!-- Колонка 1 -->
       <div class="footer-column">
-        <div class="logo"><img src="./img/logo.svg" alt=""></div>
+        <div class="logo"><a href="/index.html"><img src="./img/logo.svg" alt=""></a></div>
         <ul>
-          <li><a href="#">О нас</a></li>
-          <li><a href="#">Лечение</a></li>
-          <li><a href="/sanatorium-shipa-su/recognitions.html">Развлечения</a></li>
-          <li><a href="#">Косметология</a></li>
-          <li><a href="#">Контакты</a></li>
+          <li><a href="aboutus.html">О нас</a></li>
+          <li><a href="treatment.html">Лечение</a></li>
+          <li><a href="recognitions.html">Развлечения</a></li>
+          <li><a href="cosmetology.html">Косметология</a></li>
+          <li><a href="contacts.html">Контакты</a></li>
         </ul>
 
         <p>&copy; Shipasu.kz. Все права защищены, 2025</p>
@@ -494,9 +451,8 @@
   <!-- Scripts -->
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
   <script src="libs/swiper/swiper-bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
   <script src="js/main.js"></script>
 </body>
 
-
 </html>
-
