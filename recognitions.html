@@ -20,6 +20,11 @@
     content="Забронируйте отдых в санатории Шипасу с уникальными процедурами и комфортными номерами.">
   <meta name="twitter:image" content="url_изображения_для_ог:image.jpg">
   <title>Санаторий Шипасу - Популярные достопримечательности</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link rel="stylesheet" href="libs/swiper/swiper-bundle.min.css" />
   <link rel="stylesheet" href="css/reset.css" />
@@ -27,7 +32,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
 </head>
 
-<body>
+<body class="page-recognitions">
 
   <div class="main-bg2">
 
@@ -54,12 +59,25 @@
       </div>
 
       <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu__header">
+          <div class="mobile-menu__logo">
+            <a href="/index.html"><img src="./img/logo.svg" alt="Логотип"></a>
+          </div>
+          <button class="mobile-menu__close" id="mobileClose">&times;</button>
+        </div>
+
         <ul class="mobile-menu__list">
           <li><a href="index.html" class="nav__link">Главная</a></li>
           <li><a href="treatment.html" class="nav__link">Лечение</a></li>
           <li><a href="aboutus.html" class="nav__link">О нас</a></li>
           <li><a href="contacts.html" class="nav__link">Контакты</a></li>
         </ul>
+
+        <div class="mobile-menu__footer">
+          <a href="https://instagram.com" target="_blank" class="mobile-menu__insta">
+            <img src="./img/insta.svg" alt="Instagram">
+          </a>
+        </div>
       </div>
     </header>
 
@@ -73,40 +91,157 @@
 
   </div>
 
-  <section class="about" id="about">
-    <div class="container about__container">
-      <div class="about__content">
+  <section class="section-mausoleum-info2">
+    <div class="container">
+      <!-- Первый блок -->
+      <div class="section-mausoleum-info2-item1">
+        <img src="./img/mausoleum.jpg" alt="Номер санатория" class="section-mausoleum-info2-item1-image">
+        <div class="section-mausoleum-info2-item1-text">
+          <h2>Мавзолей Арыстан-баба</h2>
+          <p>Сооружение мавзолея имеет нестандартную внешнюю конструкцию: башни-минареты, откуда традиционно звучит
+            азан,
+            схожи с
+            наблюдательными башнями, а самой яркой чертой является так называемый “портал” - широкая арка, в которой
+            исламская
+            культура переплелась с мотивами европейской и русской архитектуры. Здесь есть усыпальница и поминальная
+            мечеть. Важное
+            достоинство мавзолея Арыстан-Баба и шедевр средневекового каллиграфического искусства — старинный рукописный
+            Коран.</p><br />
+          <p>Красоту духовных мест невозможно передать словами — их важно увидеть и почувствовать эту мощнейшую
+            энергетику. Мавзолей
+            Арыстан-Баба несомненно оставит в памяти каждого самые теплые воспоминания, подарив внутреннее спокойствие и
+            массу
+            приятных эмоций.</p>
+        </div>
+      </div>
+
+      <!-- Второй блок: галерея -->
+      <div class="section-mausoleum-info2-item2">
+        <img src="./img/mausoleum2.jpg" alt="Галерея 1">
+        <img src="./img/mausoleum3.jpg" alt="Галерея 2">
+        <img src="./img/mausoleum4.jpg" alt="Галерея 3">
       </div>
     </div>
   </section>
 
-  <section class="section-about">
-    <!-- Первый блок -->
-    <div class="block-one">
-      <img src="./img/mausoleum.jpg" alt="Номер санатория" class="block-one-image">
-      <div class="block-one-text">
-        <h2>Мавзолей Арыстан-баба</h2>
-        <p>Сооружение мавзолея имеет нестандартную внешнюю конструкцию: башни-минареты, откуда традиционно звучит азан,
-          схожи с
-          наблюдательными башнями, а самой яркой чертой является так называемый “портал” - широкая арка, в которой
-          исламская
-          культура переплелась с мотивами европейской и русской архитектуры. Здесь есть усыпальница и поминальная
-          мечеть. Важное
-          достоинство мавзолея Арыстан-Баба и шедевр средневекового каллиграфического искусства — старинный рукописный
-          Коран.</p>
-        <p>Красоту духовных мест невозможно передать словами — их важно увидеть и почувствовать эту мощнейшую
-          энергетику. Мавзолей
-          Арыстан-Баба несомненно оставит в памяти каждого самые теплые воспоминания, подарив внутреннее спокойствие и
-          массу
-          приятных эмоций.</p>
+  <section class="section-center-info">
+    <div class="container">
+      <div class="section-center-info2">
+        <div class="sec-center-item1">
+          <div class="sec-center-item-text">
+            <h2>Историко-культурный этнографический центр</h2>
+            <p>В 2010 году в день Независимости открыто трехэтажное здание историко-культурно-этнографического центра
+              площадью 4 600
+              квадратных метров. В центре находится 8 экспозиционных залов, конференц-зал, мастерские ремесленников,
+              помещения для
+              исследовательской работы историков.</p><br />
+            <p>Здание историко-культурно-этнографического центра расположено вблизи к мавзолею Ходжи Ахмеда Ясави.
+              Здание
+              построено по
+              проекту архитектора Габита Садырбаева. Разработкой концепции и созданием экспозиции музея занималась
+              авторская
+              группа
+              под руководством профессора Аманжола Найманбаева.</p>
+          </div>
+          <img src="./img/center.png" alt="" class="sec-center-item-img">
+        </div>
+        <div class="sec-center-item2">
+          <img src="./img/center1.png" alt="Галерея 1">
+          <img src="./img/center2.png" alt="Галерея 2">
+        </div>
       </div>
     </div>
+  </section>
 
-    <!-- Второй блок: галерея -->
-    <div class="block-two">
-      <img src="./img/mausoleum2.jpg" alt="Галерея 1">
-      <img src="./img/mausoleum3.jpg" alt="Галерея 2">
-      <img src="./img/mausoleum4.jpg" alt="Галерея 3">
+  <section class="section-zapovednik-info">
+    <div class="container">
+      <div class="section-zapovednik-inner">
+        <div class="section-zapovednik-info-img">
+          <img src="./img/zapovednik1.png" alt="">
+        </div>
+        <div class="section-zapovednik-info-content">
+          <h2>Каратауский заповедник</h2>
+          <p>Каратауский заповедник - это новейший государственный резерват площадью 34300 га, расположенный в
+            Центральной
+            части
+            хребта Каратау, который является одной из ветвей северо-западного Тянь-Шаня. В местных горах можно увидеть
+            множество
+            водопадов, в том числе и колоритные каскады. Многие географы, ботаники, экологи и другие научные
+            исследователи
+            природы
+            отмечают своеобразность Каратауского заповедника из-за уникального растительного покрова. Местность
+            территории
+            Каратау
+            потерпела значительные изменения в животном мире, однако здесь все еще встречаются редкие виды насекомых,
+            птиц
+            и
+            животных, а также некоторые представители фауны, занесенные в Красную книгу Казахстана.</p><br />
+          <p>Люди должны хранить и заботиться о природе. Именно для этого создан Каратауский государственный природный
+            заповедник,
+            где каждый человек может побыть в гармонии с природой и с самим собой, понять важность сохранения бесценных
+            территорий,
+            не загрязненных и не погубленных деятельностью людей.</p>
+          <img src="./img/zapovednik2.png" alt="">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-oazis-info">
+    <div class="container">
+      <div class="section-oazis-inner">
+        <div class="section-oazis-info-content">
+          <h2>Отрарский оазис</h2>
+          <p>Отрарский оазис – жемчужина археологии Республики Казахстан. Продолжение археологических исследований,
+            консервационных
+            мероприятий, развитие туристической инфраструктуры – важнейшие составляющие процесса по включению памятников
+            оазиса в
+            список Всемирного культурного наследия.</p><br />
+          <p>Протяженность оазиса составляет с севера на юг около 53 километров, с запада на восток около 54 километров
+            На
+            территории
+            оазиса насчитывается свыше 130 памятников.</p>
+          <img src="./img/oazis2.png" alt="">
+        </div>
+        <div class="section-oazis-info-img">
+          <img src="./img/oazis1.png" alt="">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-mausoleum-info">
+    <div class="container">
+      <div class="section-mausoleum-info-item">
+        <img src="./img/yasavi.png" alt="" class="section-mausoleum-info-image">
+        <div class="section-mausoleum-info-text">
+          <h2>Мавзолей Ходжи Ахмеда Ясави</h2>
+          <p>Знаменитый мавзолей назван в честь выдающегося мусульманского деятеля и поэта Ходжи Ахмеда Ясави. Это
+            священное место
+            традиционно считается Малой Меккой. Мавзолей высотой 39 метров внесен в список Всемирного наследия ЮНЕСКО.
+            Здесь
+            находятся 35 помещений, что соединяются друг с другом различными ходами и коридорами; библиотека древних
+            книг,
+            подземная
+            мечеть, баня, а также зал для ритуала благословения новорожденных. В центральной комнате под названием
+            “Казандык” стоит
+            древняя святыня "Тай-Казан"</p><br />
+          <p>Мавзолей Ходжи Ахмеда Ясави способен передать все духовные знания, которые он впитал за несколько веков
+            существования,
+            познакомить с историей и культурой Казахстана и всей Средней Азии. Он совмещает в себе не только величие
+            архитектурной
+            мысли, но и величие души - скромность. Каждый человек, дорога которого привела в Туркестан, должен посетить
+            это
+            удивительное место, окутанное множеством тайн и загадок, прикоснуться к символу тюркской народной мудрости и
+            обязательно
+            приехать сюда вновь.</p>
+        </div>
+      </div>
+
+      <!-- Второй блок: галерея -->
+      <div class="section-mausoleum-info-item">
+        <img src="./img/yasavi2.png" alt="Галерея 1">
+      </div>
     </div>
   </section>
 
@@ -127,12 +262,13 @@
             <p>+996 (509) 04-23-45</p>
           </div>
           <div class="info-box-element">
-            <h4>Телефон</h4>
-            <p>+996 (509) 04-23-45</p>
+            <h4>Email</h4>
+            <p>shipasu@mail.kz</p>
           </div>
           <div class="info-box-element">
-            <h4>Телефон</h4>
-            <p>+996 (509) 04-23-45</p>
+            <h4>Адрес</h4>
+            <p>Туркестанская область, город Туркестан<br />
+              157 квартал, здание №037</p>
           </div>
         </div>
       </div>
@@ -160,7 +296,7 @@
           <li><a href="contacts.html">Контакты</a></li>
         </ul>
 
-        <p>&copy; Shipasu.kz. Все права защищены, 2025</p>
+        <p>&copy; Shipasu. Все права защищены, 2025</p>
       </div>
 
       <!-- Колонка 2 -->

@@ -19,10 +19,12 @@
   <meta name="twitter:description"
     content="Забронируйте отдых в санатории Шипасу с уникальными процедурами и комфортными номерами.">
   <meta name="twitter:image" content="url_изображения_для_ог:image.jpg">
-  <title>Санаторий Шипасу - Отдых и оздоровление</title>
-  <!--  <link
+  <title>Санаторий Шипасу - Главная</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
     href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
-    rel="stylesheet"> -->
+    rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link rel="stylesheet" href="libs/swiper/swiper-bundle.min.css" />
   <link rel="stylesheet" href="css/reset.css" />
@@ -30,7 +32,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
 </head>
 
-<body>
+<body class="page">
 
   <div class="main-bg">
 
@@ -57,13 +59,27 @@
       </div>
 
       <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu__header">
+          <div class="mobile-menu__logo">
+            <a href="index.html"><img src="./img/logo.svg" alt="Логотип"></a>
+          </div>
+          <button class="mobile-menu__close" id="mobileClose">&times;</button>
+        </div>
+
         <ul class="mobile-menu__list">
-          <li><a href="/index.html" class="nav__link">Главная</a></li>
-          <li><a href="/treatment.html" class="nav__link">Лечение</a></li>
-          <li><a href="/aboutus.html" class="nav__link">О нас</a></li>
-          <li><a href="/contacts.html" class="nav__link">Контакты</a></li>
+          <li><a href="index.html" class="nav__link">Главная</a></li>
+          <li><a href="treatment.html" class="nav__link">Лечение</a></li>
+          <li><a href="aboutus.html" class="nav__link">О нас</a></li>
+          <li><a href="contacts.html" class="nav__link">Контакты</a></li>
         </ul>
+
+        <div class="mobile-menu__footer">
+          <a href="https://instagram.com" target="_blank" class="mobile-menu__insta">
+            <img src="./img/insta.svg" alt="Instagram">
+          </a>
+        </div>
       </div>
+
     </header>
 
     <section class="hero">
@@ -318,55 +334,6 @@
     </div>
   </section>
 
-  <!--  <section class="gallery-section">
-    <div class="container">
-      <h2>Галерея</h2>
-
-      <div class="swiper gallery-swiper">
-        <div class="swiper-wrapper">
-          <div class="swiper-slide" data-img="./img/img-g1.png">
-            <img src="./img/img-g1.png" alt="Фото 1">
-          </div>
-          <div class="swiper-slide" data-img="./img/img-g2.png">
-            <img src="./img/img-g2.png" alt="Фото 2">
-          </div>
-          <div class="swiper-slide" data-img="./img/img-g3.png">
-            <img src="./img/img-g3.png" alt="Фото 3">
-          </div>
-          <div class="swiper-slide" data-img="./img/img-g4.png">
-            <img src="./img/img-g4.png" alt="Фото 4">
-          </div>
-          <div class="swiper-slide" data-img="./img/img-g1.png">
-            <img src="./img/img-g1.png" alt="Фото 1">
-          </div>
-          <div class="swiper-slide" data-img="./img/img-g2.png">
-            <img src="./img/img-g2.png" alt="Фото 2">
-          </div>
-          <div class="swiper-slide" data-img="./img/img-g3.png">
-            <img src="./img/img-g3.png" alt="Фото 3">
-          </div>
-          <div class="swiper-slide" data-img="./img/img-g4.png">
-            <img src="./img/img-g4.png" alt="Фото 4">
-          </div>
-        </div>
-
-        <div class="swiper-button-prev custom-nav"></div>
-        <div class="swiper-button-next custom-nav"></div>
-
-      </div>
-    </div>
-
-
-  </section> -->
-
-  <!-- Модальное окно -->
-  <!-- <div class="modal" id="imageModal">
-    <span class="close-modal">&times;</span>
-    <div class="modal-content">
-      <img src="" alt="Увеличенное изображение" id="modalImage">
-    </div>
-  </div> -->
-
   <section class="sec-contacts">
     <div class="sec-inner container">
       <div class="left-block">
@@ -377,12 +344,13 @@
             <p>+996 (509) 04-23-45</p>
           </div>
           <div class="info-box-element">
-            <h4>Телефон</h4>
-            <p>+996 (509) 04-23-45</p>
+            <h4>Email</h4>
+            <p>shipasu@mail.kz</p>
           </div>
           <div class="info-box-element">
-            <h4>Телефон</h4>
-            <p>+996 (509) 04-23-45</p>
+            <h4>Адрес</h4>
+            <p>Туркестанская область, город Туркестан<br />
+              157 квартал, здание №037</p>
           </div>
         </div>
       </div>
@@ -410,7 +378,7 @@
           <li><a href="contacts.html">Контакты</a></li>
         </ul>
 
-        <p>&copy; Shipasu.kz. Все права защищены, 2025</p>
+        <p>&copy; Shipasu. Все права защищены, 2025</p>
       </div>
 
       <!-- Колонка 2 -->
@@ -438,7 +406,7 @@
 
       <!-- Колонка 4 -->
       <div class="footer-column">
-        <h4>Подпишитесь</h4>
+        <h4>Подпишись на нас</h4>
         <div class="social-icons">
           <a href="#" title="Facebook"><img src="./img/fb.svg" alt=""> <span>/shipasu.kz</span></a>
           <a href="#" title="Instagram"><img src="./img/insta.svg" alt=""> <span>/shipasu.kz</span></a>

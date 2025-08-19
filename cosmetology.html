@@ -19,10 +19,12 @@
   <meta name="twitter:description"
     content="Забронируйте отдых в санатории Шипасу с уникальными процедурами и комфортными номерами.">
   <meta name="twitter:image" content="url_изображения_для_ог:image.jpg">
-  <title>Санаторий Шипасу - Популярные достопримечательности</title>
-  <!--  <link
+  <title>Санаторий Шипасу - Косметология</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
     href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
-    rel="stylesheet"> -->
+    rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link rel="stylesheet" href="libs/swiper/swiper-bundle.min.css" />
   <link rel="stylesheet" href="css/reset.css" />
@@ -30,22 +32,22 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
 </head>
 
-<body>
+<body class="page-cosmetology">
 
-  <div class="main-bg2">
+  <div>
 
     <header class="header">
       <div class="container header__container">
         <div class="header__logo">
-          <a href="/"><img src="./img/logo.svg" alt="Логотип санатория Шипасу"></a>
+          <a href="/"><img src="./img/logo2.svg" alt="Логотип санатория Шипасу"></a>
         </div>
 
         <nav class="nav header__nav">
           <ul class="nav__list">
-            <li><a href="./index.html" class="nav__link">Главная</a></li>
-            <li><a href="#" class="nav__link">Лечение</a></li>
-            <li><a href="#" class="nav__link">О нас</a></li>
-            <li><a href="#" class="nav__link">Контакты</a></li>
+            <li><a href="index.html" class="nav__link">Главная</a></li>
+            <li><a href="treatment.html" class="nav__link">Лечение</a></li>
+            <li><a href="aboutus.html" class="nav__link">О нас</a></li>
+            <li><a href="contacts.html" class="nav__link">Контакты</a></li>
           </ul>
         </nav>
 
@@ -57,162 +59,60 @@
       </div>
 
       <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu__header">
+          <div class="mobile-menu__logo">
+            <a href="/index.html"><img src="./img/logo.svg" alt="Логотип"></a>
+          </div>
+          <button class="mobile-menu__close" id="mobileClose">&times;</button>
+        </div>
+
         <ul class="mobile-menu__list">
-          <li><a href="./index.html" class="nav__link">Главная</a></li>
-          <li><a href="#" class="nav__link">Лечение</a></li>
-          <li><a href="#" class="nav__link">О нас</a></li>
-          <li><a href="#" class="nav__link">Контакты</a></li>
+          <li><a href="index.html" class="nav__link">Главная</a></li>
+          <li><a href="treatment.html" class="nav__link">Лечение</a></li>
+          <li><a href="aboutus.html" class="nav__link">О нас</a></li>
+          <li><a href="contacts.html" class="nav__link">Контакты</a></li>
         </ul>
+
+        <div class="mobile-menu__footer">
+          <a href="https://instagram.com" target="_blank" class="mobile-menu__insta">
+            <img src="./img/insta.svg" alt="Instagram">
+          </a>
+        </div>
       </div>
     </header>
 
-    <section class="hero hero__p2">
+    <section class="hero">
       <div class="container hero__container">
-        <div class="">
-          <h1 class="hero__title hero__page2">Популярные достопримечательности</h1>
-
-          <!--       <form class="booking-form" method="POST">
-            <div class="form-group">
-              <div class="form-select-wrapper">
-                <span class="form-icon">📅</span>
-                <select id="arrival-date" name="arrival-date" class="form-input arrival-select" required
-                  aria-label="Дата заезда">
-                  <option value="">Дата заезда</option>
-                </select>
-              </div>
-            </div>
-
-            <div class="form-group">
-              <div class="form-select-wrapper">
-                <span class="form-icon">📅</span>
-                <select id="departure-date" name="departure-date" class="form-input departure-select" required
-                  aria-label="Дата выезда">
-                  <option value="">Дата выезда</option>
-                </select>
-              </div>
-            </div>
-
-            <div class="form-group">
-              <div class="form-select-wrapper">
-                <span class="form-icon">👤</span>
-                <select id="guests" name="guests" class="form-input" required aria-label="Количество гостей">
-                  <option value="">Гости</option>
-                  <option value="1">1 человек</option>
-                  <option value="2">2 человека</option>
-                  <option value="3">3 человека</option>
-                  <option value="4">4 человека</option>
-                  <option value="5">5 человек</option>
-                </select>
-              </div>
-            </div>
-
-            <button type="button" class="btn btn-primary" id="open-booking-popup">Забронировать</button>
-          </form> -->
-
-          <!-- Popup форма бронирования -->
-          <!-- <div id="booking-popup" class="popup hidden">
-            <form id="popup-booking-form">
-              <h2>Форма бронирования</h2>
-              <input type="text" name="name" placeholder="Ваше имя" required>
-              <input type="email" name="email" placeholder="Ваш email" required>
-              <input type="tel" name="phone" placeholder="Телефон" required>
-              <button type="submit" class="btn btn-primary">Отправить</button>
-            </form>
-          </div> -->
-
-          <!--      <form>
-            <div class="custom-select">
-              <div class="selected">
-                <img src="./img/calendar.svg" alt="" />
-                <span>Дата заезда</span>
-              </div>
-              <div class="options">
-                <div class="option" data-value="Дата заезда">
-                  Дата заезда
-                </div>
-                <div class="option" data-value="Дата заезда1">Дата заезда1</div>
-                <div class="option" data-value="Дата заезда2">Дата заезда2</div>
-              </div>
-            </div>
-            <div class="custom-select">
-              <div class="selected">
-                <img src="./img/calendar.svg" alt="" />
-                <span>Дата заезда</span>
-              </div>
-              <div class="options">
-                <div class="option" data-value="Дата заезда">
-                  Дата заезда
-                </div>
-                <div class="option" data-value="Дата заезда1">Дата заезда1</div>
-                <div class="option" data-value="Дата заезда2">Дата заезда2</div>
-              </div>
-            </div>
-            <div class="custom-select">
-              <div class="selected">
-                <img src="./img/peoples.svg" alt="" />
-                <span>Гости</span>
-              </div>
-              <div class="options">
-                <div class="option" data-value="Гости">
-                  Гости
-                </div>
-                <div class="option" data-value="Гости1">Гости1</div>
-                <div class="option" data-value="Гости2">Гости2</div>
-              </div>
-            </div>
-            <button class="soc__link">Забронировать</button>
-          </form> -->
-
-
+        <div class="hero__p3">
+          <h1 class="hero__title hero__page3">Косметология</h1>
         </div>
       </div>
     </section>
 
   </div>
 
-  <section class="about" id="about">
-    <div class="container about__container">
-      <div class="about__content">
+  <section class="sec-doc">
+    <div class="container">
+      <h2 class="doc-section-title"><span>Наши специалисты вдохнут в вас<br /> новые жизненные силы</span></h2>
+
+      <div class="cosmetology-cont">
+        <div class="cosmetology-cont-img">
+          <img src="./img/cosmetologiya1.png" alt="">
+          <img src="./img/cosmetologiya2.png" alt="">
+        </div>
+        <div class="cosmetology-cont-text">
+          <h3>Косметология и терапия</h3>
+          <ul class="cosmetology-list">
+            <li>Чистки</li>
+            <li>Дарсенваль</li>
+            <li>Уникальные лечебные мази</li>
+            <li>Лечение различных заболеваний</li>
+          </ul>
+        </div>
       </div>
+
     </div>
   </section>
-
-  <section class="section-about">
-    <!-- Первый блок -->
-    <div class="block-one">
-      <img src="./img/mausoleum.jpg" alt="Номер санатория" class="block-one-image">
-      <div class="block-one-text">
-        <h2>Мавзолей Арыстан-баба</h2>
-        <p>Сооружение мавзолея имеет нестандартную внешнюю конструкцию: башни-минареты, откуда традиционно звучит азан,
-          схожи с
-          наблюдательными башнями, а самой яркой чертой является так называемый “портал” - широкая арка, в которой
-          исламская
-          культура переплелась с мотивами европейской и русской архитектуры. Здесь есть усыпальница и поминальная
-          мечеть. Важное
-          достоинство мавзолея Арыстан-Баба и шедевр средневекового каллиграфического искусства — старинный рукописный
-          Коран.</p>
-        <p>Красоту духовных мест невозможно передать словами — их важно увидеть и почувствовать эту мощнейшую
-          энергетику. Мавзолей
-          Арыстан-Баба несомненно оставит в памяти каждого самые теплые воспоминания, подарив внутреннее спокойствие и
-          массу
-          приятных эмоций.</p>
-      </div>
-    </div>
-
-    <!-- Второй блок: галерея -->
-    <div class="block-two">
-      <img src="./img/mausoleum2.jpg" alt="Галерея 1">
-      <img src="./img/mausoleum3.jpg" alt="Галерея 2">
-      <img src="./img/mausoleum4.jpg" alt="Галерея 3">
-    </div>
-  </section>
-
-  <!-- Модальное окно -->
-  <div id="modal" class="modal">
-    <span class="close">&times;</span>
-    <img class="modal-content" id="modal-img">
-    <div id="caption"></div>
-  </div>
 
   <section class="sec-contacts">
     <div class="sec-inner container">
@@ -235,7 +135,7 @@
       </div>
 
       <div class="right-block">
-        <h2>Остались вопросы?</h2>
+        <h2>Свяжитесь с нами</h2>
         <p>
           Мы с радостью ответим на все ваши вопросы и поможем в выборе.
         </p>
@@ -250,14 +150,14 @@
       <div class="footer-column">
         <div class="logo"><img src="./img/logo.svg" alt=""></div>
         <ul>
-          <li><a href="#">О нас</a></li>
-          <li><a href="#">Лечение</a></li>
-          <li><a href="./recognitions.html">Развлечения</a></li>
-          <li><a href="#">Косметология</a></li>
-          <li><a href="#">Контакты</a></li>
+          <li><a href="aboutus.html">О нас</a></li>
+          <li><a href="treatment.html">Лечение</a></li>
+          <li><a href="recognitions.html">Развлечения</a></li>
+          <li><a href="cosmetology.html">Косметология</a></li>
+          <li><a href="contacts.html">Контакты</a></li>
         </ul>
 
-        <p>&copy; Shipasu.kz. Все права защищены, 2025</p>
+        <p>&copy; Shipasu. Все права защищены, 2025</p>
       </div>
 
       <!-- Колонка 2 -->

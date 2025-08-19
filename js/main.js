@@ -271,31 +271,33 @@ $(document).ready(function () {
   const popupOverlay = document.getElementById("popupOverlay");
   const closePopupBtn = document.getElementById("closePopup");
 
-  openPopupBtn.addEventListener("click", () => {
-    const arrival = document.getElementById("arrival").value;
-    const departure = document.getElementById("departure").value;
-    const guests = document.getElementById("guests").value;
+  if (openPopupBtn !== null) {
+    openPopupBtn.addEventListener("click", () => {
+      const arrival = document.getElementById("arrival").value;
+      const departure = document.getElementById("departure").value;
+      const guests = document.getElementById("guests").value;
 
-    if (!arrival || !departure || !guests) {
-      alert("Пожалуйста, заполните все поля");
-      return;
-    }
+      if (!arrival || !departure || !guests) {
+        alert("Пожалуйста, заполните все поля");
+        return;
+      }
 
-    document.getElementById("popupArrival").textContent = arrival;
-    document.getElementById("popupDeparture").textContent = departure;
-    document.getElementById("popupGuests").textContent = guests;
-    popupOverlay.style.display = "flex";
-  });
+      document.getElementById("popupArrival").textContent = arrival;
+      document.getElementById("popupDeparture").textContent = departure;
+      document.getElementById("popupGuests").textContent = guests;
+      popupOverlay.style.display = "flex";
+    });
 
-  closePopupBtn.addEventListener("click", () => {
-    popupOverlay.style.display = "none";
-  });
-
-  popupOverlay.addEventListener("click", (e) => {
-    if (e.target === popupOverlay) {
+    closePopupBtn.addEventListener("click", () => {
       popupOverlay.style.display = "none";
-    }
-  });
+    });
+
+    popupOverlay.addEventListener("click", (e) => {
+      if (e.target === popupOverlay) {
+        popupOverlay.style.display = "none";
+      }
+    });
+  }
 
   /* const modal = document.getElementById("modal");
   const modalImg = document.getElementById("modal-img");
@@ -319,4 +321,18 @@ $(document).ready(function () {
       modal.style.display = "none";
     }
   }); */
+
+  const burger = document.getElementById("burger");
+  const mobileMenu = document.getElementById("mobileMenu");
+  const mobileClose = document.getElementById("mobileClose");
+
+  burger.addEventListener("click", () => {
+    mobileMenu.classList.add("active");
+    document.documentElement.style.overflow = "hidden"; // блокируем scroll у <html>
+  });
+
+  mobileClose.addEventListener("click", () => {
+    mobileMenu.classList.remove("active");
+    document.documentElement.style.overflow = ""; // возвращаем scroll
+  });
 });
