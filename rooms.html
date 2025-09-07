@@ -9,213 +9,255 @@
   <meta name="keywords" content="санаторий, отдых, оздоровление, минеральные воды, лечение, курорт, Шипасу">
   <meta name="author" content="Санаторий Шипасу">
   <meta name="robots" content="index, follow">
+
+  <!-- Open Graph / Facebook -->
   <meta property="og:title" content="Санаторий Шипасу - Отдых и оздоровление">
   <meta property="og:description"
     content="Забронируйте отдых в санатории Шипасу с уникальными процедурами и комфортными номерами.">
-  <meta property="og:image" content="url_изображения_для_ог:image.jpg">
+  <meta property="og:image" content="url_изображения_для_og:image.jpg">
   <meta property="og:url" content="https://example.com">
+
+  <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Санаторий Шипасу - Отдых и оздоровление">
   <meta name="twitter:description"
     content="Забронируйте отдых в санатории Шипасу с уникальными процедурами и комфортными номерами.">
-  <meta name="twitter:image" content="url_изображения_для_ог:image.jpg">
+  <meta name="twitter:image" content="url_изображения_для_og:image.jpg">
+
   <title>Санаторий Шипасу - Комнаты</title>
+
+  <!-- Fonts -->
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
     href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
     rel="stylesheet">
+
+  <!-- Styles -->
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link rel="stylesheet" href="libs/swiper/swiper-bundle.min.css" />
   <link rel="stylesheet" href="css/reset.css" />
   <link rel="stylesheet" href="css/style.css" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+  <!-- ✅ Правильные стили -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/air-datepicker@3.3.5/air-datepicker.min.css">
+
+
+  <!-- Favicon -->
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <meta name="theme-color" content="#ffffff">
 </head>
 
-<body class="page-rooms">
+<body>
 
-  <div>
-
-    <header class="header">
-      <div class="container header__container">
-        <div class="header__logo">
-          <a href="/"><img src="./img/logo2.svg" alt="Логотип санатория Шипасу"></a>
-        </div>
-
-        <nav class="nav header__nav">
-          <ul class="nav__list">
-            <li><a href="index.html" class="nav__link">Главная</a></li>
-            <li><a href="treatment.html" class="nav__link">Лечение</a></li>
-            <li><a href="aboutus.html" class="nav__link">О нас</a></li>
-            <li><a href="contacts.html" class="nav__link">Контакты</a></li>
-          </ul>
-        </nav>
-
-        <a href="#" class="soc__link btn__order__page2" aria-label="YouTube">Забронировать номер</a>
-
-        <div class="burger" id="burger">
-          <span></span><span></span><span></span>
-        </div>
+  <header class="header">
+    <div class="header__container container">
+      <div class="header__logo">
+        <a class="header__logo-link" href="/index.html">
+          <img class="header__logo-img" src="./img/logo.svg" alt="Логотип санатория Шипасу">
+        </a>
       </div>
 
-      <div class="mobile-menu" id="mobileMenu">
-        <div class="mobile-menu__header">
-          <div class="mobile-menu__logo">
-            <a href="/index.html"><img src="./img/logo.svg" alt="Логотип"></a>
-          </div>
-          <button class="mobile-menu__close" id="mobileClose">&times;</button>
-        </div>
-
-        <ul class="mobile-menu__list">
-          <li><a href="index.html" class="nav__link">Главная</a></li>
-          <li><a href="treatment.html" class="nav__link">Лечение</a></li>
-          <li><a href="aboutus.html" class="nav__link">О нас</a></li>
-          <li><a href="contacts.html" class="nav__link">Контакты</a></li>
+      <nav class="header__nav nav">
+        <ul class="nav__list">
+          <li class="nav__item"><a href="index.html" class="nav__link">Главная</a></li>
+          <li class="nav__item"><a href="treatment.html" class="nav__link">Лечение</a></li>
+          <li class="nav__item"><a href="aboutus.html" class="nav__link">О нас</a></li>
+          <li class="nav__item"><a href="contacts.html" class="nav__link">Контакты</a></li>
         </ul>
+      </nav>
 
-        <div class="mobile-menu__footer">
-          <a href="https://instagram.com" target="_blank" class="mobile-menu__insta">
-            <img src="./img/insta.svg" alt="Instagram">
+      <a href="#" class="header__book-link book-btn">Забронировать номер</a>
+
+      <button class="header__burger burger" id="burger" type="button">
+        <span class="burger__line"></span>
+        <span class="burger__line"></span>
+        <span class="burger__line"></span>
+      </button>
+    </div>
+
+    <!-- Мобильное меню -->
+    <div class="header__mobile-menu" id="mobileMenu">
+      <!-- Шапка меню только с логотипом -->
+      <div class="mobile-menu__header">
+        <div class="mobile-menu__logo">
+          <a href="index.html" class="mobile-menu__logo-link">
+            <img class="mobile-menu__logo-img" src="./img/logo.svg" alt="Логотип">
           </a>
         </div>
+        <!-- Кнопка закрытия добавляется через JS -->
       </div>
-    </header>
 
-    <section class="hero hero__p2">
-      <div class="container hero__container">
-        <div class="">
+      <!-- Пункты меню -->
+      <ul class="mobile-menu__list">
+        <li class="mobile-menu__item"><a href="index.html" class="mobile-menu__link">Главная</a></li>
+        <li class="mobile-menu__item"><a href="treatment.html" class="mobile-menu__link">Лечение</a></li>
+        <li class="mobile-menu__item"><a href="aboutus.html" class="mobile-menu__link">О нас</a></li>
+        <li class="mobile-menu__item"><a href="contacts.html" class="mobile-menu__link">Контакты</a></li>
+      </ul>
+    </div>
+  </header>
 
+  <main>
+
+    <section class="hero-slider">
+      <div class="hero-slider__container container">
+        <div class="hero-slider__swiper swiper">
+          <div class="swiper-wrapper hero-slider__wrapper">
+            <div class="swiper-slide hero-slider__slide">
+              <img src="./img/slide1.jpg" alt="Слайд 1" class="hero-slider__image">
+              <div class="hero-slider__caption">Комфортные номера</div>
+            </div>
+            <div class="swiper-slide hero-slider__slide">
+              <img src="./img/slide2.jpg" alt="Слайд 2" class="hero-slider__image">
+              <div class="hero-slider__caption">Минеральные воды</div>
+            </div>
+            <div class="swiper-slide hero-slider__slide">
+              <img src="./img/slide3.jpg" alt="Слайд 3" class="hero-slider__image">
+              <div class="hero-slider__caption">Уникальные процедуры</div>
+            </div>
+          </div>
+
+          <!-- Кнопки навигации -->
+          <div class="hero-slider__button hero-slider__button--prev swiper-button-prev"></div>
+          <div class="hero-slider__button hero-slider__button--next swiper-button-next"></div>
         </div>
       </div>
     </section>
 
-  </div>
-
-  <section class="sec-rooms">
-    <div class="container">
-      <h2 class="rooms-section-title"><span>Доступные к брони номера</span></h2>
-      <div class="rooms-grid">
-        <div class="room-el">
-          <div class="room-img"><img src="./img/room1-1.png" alt=""></div>
-          <div class="room-content-wrapper">
-            <div class="room-title">Стандарт 1- и 2- местный</div>
-            <div class="character-list">Квадратура номера 20 кв.м.<br />
-              Балкон 3 кв.м<br />
-              Душ и все принадлежности<br />
-              на 2 двоих отдельные раздельные кровати<br /><br />
-              Питьевая вода йодовая всем и некоторым по показаниям<br />
-              Электрофорез<br />
-              Дарсенваль<br />
-              Кварцевое тубе<br />
-              Магнитный массаж<br />
-              Вакуумный массаж электронный<br />
-              Парафин<br />
-              Фито бочка<br />
-              3х разовое питание
+    <section class="sec-rooms">
+      <div class="container">
+        <h2 class="rooms-section-title"><span>Доступные к брони номера</span></h2>
+        <div class="rooms-grid">
+          <div class="room-el">
+            <div class="room-img"><img src="./img/room1-1.png" alt=""></div>
+            <div class="room-content-wrapper">
+              <div class="room-title">Стандарт 1- и 2- местный</div>
+              <div class="character-list">Квадратура номера 20 кв.м.<br />
+                Балкон 3 кв.м<br />
+                Душ и все принадлежности<br />
+                на 2 двоих отдельные раздельные кровати<br /><br />
+                Питьевая вода йодовая всем и некоторым по показаниям<br />
+                Электрофорез<br />
+                Дарсенваль<br />
+                Кварцевое тубе<br />
+                Магнитный массаж<br />
+                Вакуумный массаж электронный<br />
+                Парафин<br />
+                Фито бочка<br />
+                3х разовое питание
+              </div>
+              <div class="room-price">18000 тенге/сутки</div>
             </div>
-            <div class="room-price">18000 тенге/сутки</div>
           </div>
-        </div>
-        <div class="room-el">
-          <div class="room-img"><img src="./img/room1-2.png" alt=""></div>
-          <div class="room-content-wrapper">
-            <div class="room-title">Де люкс 20 кв.м.</div>
-            <div class="character-list">Квадратура номера 20 кв.м.<br />
-              Балкон 3 кв.м.<br />
-              Душ и все принадлежности<br />
-              на 2 персоны (двухспалка)<br /><br />
-              Питьевая вода йодовая всем и некоторым по показаниям<br />
-              Электрофорез<br />
-              Дарсенваль<br />
-              Кварцевое тубе<br />
-              Магнитный массаж<br />
-              Вакуумный массаж электронный<br />
-              Парафин<br />
-              Фито бочка<br />
-              3х разовое питание
+          <div class="room-el">
+            <div class="room-img"><img src="./img/room1-2.png" alt=""></div>
+            <div class="room-content-wrapper">
+              <div class="room-title">Де люкс 20 кв.м.</div>
+              <div class="character-list">Квадратура номера 20 кв.м.<br />
+                Балкон 3 кв.м.<br />
+                Душ и все принадлежности<br />
+                на 2 персоны (двухспалка)<br /><br />
+                Питьевая вода йодовая всем и некоторым по показаниям<br />
+                Электрофорез<br />
+                Дарсенваль<br />
+                Кварцевое тубе<br />
+                Магнитный массаж<br />
+                Вакуумный массаж электронный<br />
+                Парафин<br />
+                Фито бочка<br />
+                3х разовое питание
+              </div>
+              <div class="room-price"><span>25 000</span> тенге/сутки.</div>
             </div>
-            <div class="room-price"><span>25 000</span> тенге/сутки.</div>
           </div>
-        </div>
-        <div class="room-el">
-          <div class="room-img"><img src="./img/room1-3.png" alt=""></div>
-          <div class="room-content-wrapper">
-            <div class="room-title">Люкс 40 кв.м.</div>
-            <div class="character-list">Квадратура номера 40 кв.м.<br />
-              Спальня 20 кв.м.<br />
-              Гостиная 20 кв.м.<br />
-              Балкон 6 кв. м.<br />
-              Душ и все принадлежности<br />
-              на 2 персоны<br />
-              и плюс одна кроватка для вашего малыша<br /><br />
-              Питьевая вода йодовая всем и некоторым по показаниям<br />
-              Электрофорез<br />
-              Дарсенваль<br />
-              Кварцевое тубе<br />
-              Магнитный массаж<br />
-              Вакуумный массаж электронный<br />
-              Парафин<br />
-              Фито бочка<br />
-              3х разовое питание
+          <div class="room-el">
+            <div class="room-img"><img src="./img/room1-3.png" alt=""></div>
+            <div class="room-content-wrapper">
+              <div class="room-title">Люкс 40 кв.м.</div>
+              <div class="character-list">Квадратура номера 40 кв.м.<br />
+                Спальня 20 кв.м.<br />
+                Гостиная 20 кв.м.<br />
+                Балкон 6 кв. м.<br />
+                Душ и все принадлежности<br />
+                на 2 персоны<br />
+                и плюс одна кроватка для вашего малыша<br /><br />
+                Питьевая вода йодовая всем и некоторым по показаниям<br />
+                Электрофорез<br />
+                Дарсенваль<br />
+                Кварцевое тубе<br />
+                Магнитный массаж<br />
+                Вакуумный массаж электронный<br />
+                Парафин<br />
+                Фито бочка<br />
+                3х разовое питание
+              </div>
+              <div class="room-price"><span>30 000</span> тенге/сутки.</div>
             </div>
-            <div class="room-price"><span>30 000</span> тенге/сутки.</div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section class="sec-contacts">
-    <div class="sec-inner container">
-      <div class="left-block">
-        <!--  <img src="./img/contacts-img.png" alt="Картинка"> -->
-        <div class="info-box info-box-page2">
-          <div class="info-box-element">
-            <h4>Телефон</h4>
-            <p>+996 (509) 04-23-45</p>
-          </div>
-          <div class="info-box-element">
-            <h4>Email</h4>
-            <p>shipasu@mail.kz</p>
-          </div>
-          <div class="info-box-element">
-            <h4>Адрес</h4>
-            <p>Туркестанская область, город Туркестан<br />
-              157 квартал, здание №037</p>
+    <section class="contacts">
+      <div class="contacts__inner container">
+        <div class="contacts__left">
+          <img class="contacts__image" src="./img/contacts-img.png" alt="Картинка" />
+
+          <div class="contacts__info">
+            <div class="contacts__info-item">
+              <h4 class="contacts__info-title">Телефон</h4>
+              <p class="contacts__info-text">+996 (509) 04-23-45</p>
+            </div>
+            <div class="contacts__info-item">
+              <h4 class="contacts__info-title">Email</h4>
+              <p class="contacts__info-text">shipasu@mail.kz</p>
+            </div>
+            <div class="contacts__info-item">
+              <h4 class="contacts__info-title">Адрес</h4>
+              <p class="contacts__info-text">
+                Туркестанская область, город Туркестан<br />
+                157 квартал, здание №037
+              </p>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div class="right-block">
-        <h2>Остались вопросы?</h2>
-        <p>
-          Мы с радостью ответим на все ваши вопросы и поможем в выборе.
-        </p>
+        <div class="contacts__right">
+          <h2 class="contacts__title">Свяжитесь с нами</h2>
+          <p class="contacts__description">
+            Мы с радостью ответим на все ваши вопросы и поможем в выборе.
+          </p>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
+  </main>
 
-  <footer>
-    <div class="container footer-container">
+  <footer class="footer">
+    <div class="footer__inner container">
 
       <!-- Колонка 1 -->
-      <div class="footer-column">
-        <div class="logo"><img src="./img/logo.svg" alt=""></div>
-        <ul>
-          <li><a href="aboutus.html">О нас</a></li>
-          <li><a href="treatment.html">Лечение</a></li>
-          <li><a href="recognitions.html">Развлечения</a></li>
-          <li><a href="cosmetology.html">Косметология</a></li>
-          <li><a href="contacts.html">Контакты</a></li>
+      <div class="footer__column footer__column--main">
+        <div class="footer__logo">
+          <a class="footer__logo-link" href="/index.html">
+            <img class="footer__logo-image" src="./img/logo.svg" alt="Логотип Shipasu">
+          </a>
+        </div>
+        <ul class="footer__nav">
+          <li class="footer__nav-item"><a class="footer__nav-link" href="aboutus.html">О нас</a></li>
+          <li class="footer__nav-item"><a class="footer__nav-link" href="treatment.html">Лечение</a></li>
+          <li class="footer__nav-item"><a class="footer__nav-link" href="recognitions.html">Развлечения</a></li>
+          <li class="footer__nav-item"><a class="footer__nav-link" href="cosmetology.html">Косметология</a></li>
+          <li class="footer__nav-item"><a class="footer__nav-link" href="contacts.html">Контакты</a></li>
         </ul>
-
-        <p>&copy; Shipasu. Все права защищены, 2025</p>
+        <p class="footer__copy">&copy; Shipasu. Все права защищены, 2025</p>
       </div>
 
       <!-- Колонка 2 -->
-      <div class="footer-column">
-        <h4>Адрес</h4>
-        <div class="address">
+      <div class="footer__column footer__column--address">
+        <h4 class="footer__title">Адрес</h4>
+        <div class="footer__address">
           Туркестанская область,<br />
           город Туркестан<br />
           157 квартал, здание № 037
@@ -223,24 +265,28 @@
       </div>
 
       <!-- Колонка 3 -->
-      <div class="footer-column">
-        <h4>Контакты</h4>
-        <div class="contact-info">
-          <ul>
-            <li>+77717000998</li>
-            <li>+77023358888</li>
-            <li>+7(725)33 7-10-67</li>
-            <li>shipa_su18@mail.ru</li>
-          </ul>
-        </div>
+      <div class="footer__column footer__column--contacts">
+        <h4 class="footer__title">Контакты</h4>
+        <ul class="footer__contacts">
+          <li class="footer__contacts-item">+77717000998</li>
+          <li class="footer__contacts-item">+77023358888</li>
+          <li class="footer__contacts-item">+7(725)33 7-10-67</li>
+          <li class="footer__contacts-item">shipa_su18@mail.ru</li>
+        </ul>
       </div>
 
       <!-- Колонка 4 -->
-      <div class="footer-column">
-        <h4>Подпишитесь</h4>
-        <div class="social-icons">
-          <a href="#" title="Facebook"><img src="./img/fb.svg" alt=""> <span>/shipasu.kz</span></a>
-          <a href="#" title="Instagram"><img src="./img/insta.svg" alt=""> <span>/shipasu.kz</span></a>
+      <div class="footer__column footer__column--social">
+        <h4 class="footer__title">Подпишись на нас</h4>
+        <div class="footer__social">
+          <a class="footer__social-link" href="#" title="Facebook">
+            <img class="footer__social-icon" src="./img/fb.svg" alt="Facebook" />
+            <span class="footer__social-text">/shipasu.kz</span>
+          </a>
+          <a class="footer__social-link" href="#" title="Instagram">
+            <img class="footer__social-icon" src="./img/insta.svg" alt="Instagram" />
+            <span class="footer__social-text">/shipasu.kz</span>
+          </a>
         </div>
       </div>
 
@@ -248,10 +294,10 @@
   </footer>
 
   <!-- Scripts -->
-  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-  <script src="libs/swiper/swiper-bundle.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
-  <script src="js/main.js"></script>
+  <script defer src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script defer src="./libs/swiper/swiper-bundle.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+  <script defer src="js/main.js"></script>
 </body>
 
 </html>
