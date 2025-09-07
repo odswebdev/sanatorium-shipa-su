@@ -1,4 +1,3 @@
-/* --- Fonts & Base --- */
 @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
 
 html,
@@ -10,7 +9,7 @@ body {
 }
 
 .main {
-  flex: 1; /* растягиваем основной контент */
+  flex: 1;
 }
 
 * {
@@ -36,21 +35,61 @@ h3 {
   width: 100%;
 }
 
-.main__bg {
+.page__index .top__wrapper {
   background: url("../img/hero-bg.png") no-repeat center bottom;
   background-size: cover;
+  color: white;
+  position: relative;
   padding-bottom: 50px;
   min-height: 100vh;
-  margin-bottom: 60px;
 }
-/* .main-bg2 {
+
+.page__index .top__wrapper .hero__title {
+  font-size: 99px;
+  font-weight: bold;
+}
+
+.page__recognitions .top__wrapper .nav__link,
+.page__aboutus .nav__link,
+.page__contacts .nav__link,
+.page__treatment .nav__link,
+.page__cosmetology .nav__link {
+  color: #555555;
+}
+
+.page__recognitions .top__wrapper .book-btn,
+.page__aboutus .book-btn,
+.page__contacts .book-btn,
+.page__treatment .book-btn,
+.page__cosmetology .book-btn {
+  padding: 15px 30px;
+  gap: 10px;
+  width: 267px;
+  height: 51px;
+  background: radial-gradient(
+      100% 2636.43% at 100% 50%,
+      #131953 0%,
+      #004e8d 100%
+    ),
+    #e1963c;
+  border-radius: 30px;
+  font-size: 18px;
+}
+
+.page__recognitions .top__wrapper {
   background: url("../img/recognitions.png") no-repeat center bottom;
   background-size: cover;
   color: white;
   position: relative;
   padding-bottom: 50px;
   min-height: 100vh;
-} */
+}
+
+.page__recognitions .top__wrapper .hero__title {
+  font-size: 99px;
+  font-weight: bold;
+  text-align: center;
+}
 
 /* --- Header --- */
 
@@ -1210,8 +1249,7 @@ select {
   flex-wrap: wrap;
   justify-content: space-between;
   gap: 30px;
-
-ё}
+}
 .footer__column {
   flex: 1 1 200px;
   min-width: 200px;
@@ -1300,6 +1338,491 @@ select {
 .form-select-wrapper {
   display: flex;
   align-items: baseline;
+}
+
+/* Страница Лечение */
+
+.hero .hero__wrapper {
+  background: url("../img/trat.jpg") no-repeat center bottom;
+  background-size: cover;
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero__title {
+  font-size: 112px;
+  font-weight: 700;
+  margin-bottom: 0px;
+}
+
+.doc__title {
+  font-size: 56px;
+  font-weight: bold;
+  margin-bottom: 60px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+}
+.doc__title::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 60%;
+  transform: translateY(-50%);
+  width: 15%;
+  height: 2px;
+  background-color: #f5a623;
+}
+
+.doc__title::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 60%;
+  transform: translateY(-50%);
+  width: 15%;
+  height: 2px;
+  background-color: #f5a623;
+}
+
+.doc__block {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 60px;
+}
+
+.doc__text {
+  width: 50%;
+}
+
+.doc__images {
+  display: flex;
+  align-items: center;
+}
+
+.doc__image {
+  width: 50%;
+  object-fit: cover;
+}
+
+.doc__list {
+  list-style: disc;
+}
+
+.doc__item {
+  font-size: 20px;
+  margin-left: 30px;
+  margin-bottom: 10px;
+}
+
+.doc__subtitle {
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+/* Страница Комнаты */
+
+/*** Слайдер rooms ***/
+
+.hero-slider {
+  width: 100%;
+  padding: 0;
+}
+
+.hero-slider__container {
+  width: 100%;
+}
+
+.hero-slider__swiper {
+  width: 100%;
+  height: 400px;
+}
+
+.hero-slider__slide {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-slider__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.hero-slider__caption {
+  position: absolute;
+  bottom: 20px;
+  left: 30px;
+  color: #fff;
+  font-size: 24px;
+  font-weight: 600;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.6);
+}
+
+.hero-slider__button {
+  color: #fff;
+}
+
+.hero-slider__button--prev {
+  left: 10px;
+}
+
+.hero-slider__button--next {
+  right: 10px;
+}
+
+.rooms {
+  padding-bottom: 105px;
+}
+.rooms__title {
+  font-family: "PlayfairDisplay";
+  font-size: 72px;
+  font-weight: 700;
+  margin-bottom: 55px;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.rooms__title::after {
+  content: "";
+  position: absolute;
+  right: 0%;
+  top: 60%;
+  transform: translateY(-50%);
+  width: 80%;
+  height: 2px;
+  background-color: #f5a623;
+}
+
+.rooms__grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 100px;
+}
+
+.rooms__item {
+  display: flex;
+  gap: 100px;
+  width: 100%;
+}
+.rooms__grid > .rooms__item > .rooms__image {
+  flex: 1 1 40%;
+}
+.rooms__grid > .rooms__item > .rooms__image img {
+  width: 100%;
+  object-fit: cover;
+}
+.rooms__grid > .room__item > .rooms__content {
+  flex: 1 1 55%;
+}
+.rooms__name {
+  font-family: "PlayfairDisplay";
+  font-size: 32px;
+  margin-bottom: 32px;
+}
+.rooms__price {
+  font-size: 22px;
+  color: #000;
+  margin-bottom: 33px;
+}
+.rooms__characteristics {
+  list-type: none;
+}
+.rooms__characteristic {
+  font-size: 22px;
+  line-height: 1.5;
+  margin-bottom: 34px;
+}
+.rooms__price > span {
+  font-family: "Playfair Display", sans-serif;
+  font-size: 40px;
+}
+/* .room-content-wrapper > a {
+  font-family: "PlayfairDisplay";
+  font-size: 18px;
+  font-weight: 700;
+  text-transform: uppercase;
+  display: flex;
+  margin-top: 20px;
+  align-items: center;
+} */
+
+.rooms__item {
+  animation: fadeInUp 0.5s forwards;
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* О нас */
+
+.about {
+  padding-bottom: 160px;
+}
+.about__info p {
+  font-size: 22px;
+  color: #707070;
+  margin-bottom: 30px;
+}
+.about__title {
+  font-family: "PlayfairDisplay";
+  font-size: 72px;
+  font-weight: 700;
+  color: #000;
+  margin-bottom: 80px;
+  max-width: 1040px;
+}
+.about__wrapper {
+  display: grid;
+  gap: 95px;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+}
+
+.about__desc {
+  font-size: 18px;
+  line-height: 1.3;
+  color: #000;
+}
+.about__desc.collapsed {
+  max-height: 150px;
+}
+.about__desc.expanded {
+  max-height: 1000px;
+}
+.about__desc {
+  overflow: hidden;
+  max-height: 150px;
+  transition: max-height 0.5s ease;
+}
+.read-more {
+  margin-top: 15px;
+  background: none;
+  border: none;
+  color: #007bff;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.about__wrapper img {
+  width: 100%;
+  height: auto;
+}
+
+.mausoleum {
+  margin: 0 auto;
+  padding-left: 20px;
+  padding-right: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding-top: 85px;
+  padding-bottom: 175px;
+}
+
+.mausoleum__item--info {
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+  align-items: flex-start;
+  margin-bottom: 60px;
+}
+
+.mausoleum__image {
+  width: 50%;
+  object-fit: cover;
+}
+
+.mausoleum__text {
+  width: 50%;
+}
+
+.mausoleum__title {
+  font-size: 44px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.mausoleum__description p {
+  font-size: 18px;
+}
+
+/* Второй блок: галерея */
+.mausoleum__gallery {
+  display: flex;
+  gap: 20px;
+  justify-content: space-between;
+}
+
+.mausoleum__gallery-img {
+  width: 32%;
+  object-fit: cover;
+}
+
+.center {
+  padding-bottom: 175px;
+}
+
+.center__item {
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+  align-items: flex-start;
+  margin-bottom: 60px;
+}
+
+.center__text {
+  width: 50%;
+}
+
+.center__image {
+  width: 50%;
+}
+
+.center__img {
+  object-fit: cover;
+}
+
+.center__item > .center__description {
+  width: 50%;
+}
+
+.center__title {
+  font-size: 44px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.center__gallery {
+  display: flex;
+  gap: 20px;
+  justify-content: space-between;
+}
+
+.center__gallery-img {
+  width: 50%;
+  object-fit: cover;
+}
+
+.center__description p {
+  font-size: 18px;
+}
+
+.reserve {
+  padding-bottom: 175px;
+}
+
+.reserve__inner {
+  display: flex;
+  flex-direction: row;
+  gap: 60px;
+  align-items: flex-start;
+  margin-bottom: 60px;
+}
+
+.reserve__image {
+  /*  width: 50%; */
+}
+
+.reserve__content {
+  width: 50%;
+}
+
+.reserve__title {
+  font-size: 44px;
+  font-weight: bold;
+  margin-bottom: 32px;
+}
+
+.reserve__description p {
+  font-size: 18px;
+}
+
+.reserve__description p:last-of-type {
+  margin-bottom: 70px;
+}
+
+.oasis {
+  padding-bottom: 175px;
+}
+
+.oasis__inner {
+  display: flex;
+  flex-direction: row;
+  gap: 60px;
+  align-items: flex-start;
+  margin-bottom: 60px;
+}
+
+.oasis__image {
+  width: 50%;
+}
+
+.oasis__content {
+  width: 50%;
+}
+
+.oasis__title {
+  font-size: 44px;
+  font-weight: bold;
+  margin-bottom: 32px;
+}
+
+.oasis__description p {
+  font-size: 18px;
+}
+
+.oasis__description p:last-of-type {
+  margin-bottom: 70px;
+}
+
+.mausoleumh {
+  padding-bottom: 70px;
+}
+
+.mausoleumh__item {
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+  align-items: flex-start;
+  margin-bottom: 60px;
+}
+
+.mausoleumh__image {
+  width: 50%;
+  object-fit: cover;
+}
+
+.mausoleumh__text {
+  width: 50%;
+}
+
+.mausoleumh__title {
+  font-size: 44px;
+  font-weight: bold;
+  margin-bottom: 32px;
+}
+
+.mausoleumh__description p {
+  font-size: 18px;
 }
 
 /* Адаптивность */

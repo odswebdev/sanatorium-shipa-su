@@ -24,7 +24,7 @@
     content="Забронируйте отдых в санатории Шипасу с уникальными процедурами и комфортными номерами.">
   <meta name="twitter:image" content="url_изображения_для_og:image.jpg">
 
-  <title>Санаторий Шипасу - Комнаты</title>
+  <title>Санаторий Шипасу - О нас</title>
 
   <!-- Fonts -->
 
@@ -40,114 +40,128 @@
   <link rel="stylesheet" href="libs/swiper/swiper-bundle.min.css" />
   <link rel="stylesheet" href="css/reset.css" />
   <link rel="stylesheet" href="css/style.css" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+  <!-- ✅ Правильные стили -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/air-datepicker@3.3.5/air-datepicker.min.css">
 
   <!-- Favicon -->
   <link rel="icon" href="favicon.ico" type="image/x-icon">
   <meta name="theme-color" content="#ffffff">
 </head>
 
-<body class="page-aboutus">
+<body class="page__aboutus">
 
   <header class="header">
-    <div class="container header__container">
+    <div class="header__container container">
       <div class="header__logo">
-        <a href="/"><img src="./img/logo2.svg" alt="Логотип санатория Шипасу"></a>
+        <a class="header__logo-link" href="/index.html">
+          <img class="header__logo-img" src="./img/logo.svg" alt="Логотип санатория Шипасу">
+        </a>
       </div>
 
-      <nav class="nav header__nav">
+      <nav class="header__nav nav">
         <ul class="nav__list">
-          <li><a href="index.html" class="nav__link">Главная</a></li>
-          <li><a href="treatment.html" class="nav__link">Лечение</a></li>
-          <li><a href="aboutus.html" class="nav__link">О нас</a></li>
-          <li><a href="contacts.html" class="nav__link">Контакты</a></li>
+          <li class="nav__item"><a href="index.html" class="nav__link">Главная</a></li>
+          <li class="nav__item"><a href="treatment.html" class="nav__link">Лечение</a></li>
+          <li class="nav__item"><a href="aboutus.html" class="nav__link">О нас</a></li>
+          <li class="nav__item"><a href="contacts.html" class="nav__link">Контакты</a></li>
         </ul>
       </nav>
 
-      <a href="#" class="soc__link btn__order__page2" aria-label="YouTube">Забронировать номер</a>
+      <a href="#" class="header__book-link book-btn">Забронировать номер</a>
 
-      <div class="burger" id="burger">
-        <span></span><span></span><span></span>
-      </div>
+      <button class="header__burger burger" id="burger" type="button">
+        <span class="burger__line"></span>
+        <span class="burger__line"></span>
+        <span class="burger__line"></span>
+      </button>
     </div>
 
-    <div class="mobile-menu" id="mobileMenu">
+    <!-- Мобильное меню -->
+    <div class="header__mobile-menu" id="mobileMenu">
+      <!-- Шапка меню только с логотипом -->
       <div class="mobile-menu__header">
         <div class="mobile-menu__logo">
-          <a href="/index.html"><img src="./img/logo.svg" alt="Логотип"></a>
+          <a href="index.html" class="mobile-menu__logo-link">
+            <img class="mobile-menu__logo-img" src="./img/logo.svg" alt="Логотип">
+          </a>
         </div>
-        <button class="mobile-menu__close" id="mobileClose">&times;</button>
+        <!-- Кнопка закрытия добавляется через JS -->
       </div>
 
+      <!-- Пункты меню -->
       <ul class="mobile-menu__list">
-        <li><a href="index.html" class="nav__link">Главная</a></li>
-        <li><a href="treatment.html" class="nav__link">Лечение</a></li>
-        <li><a href="aboutus.html" class="nav__link">О нас</a></li>
-        <li><a href="contacts.html" class="nav__link">Контакты</a></li>
+        <li class="mobile-menu__item"><a href="index.html" class="mobile-menu__link">Главная</a></li>
+        <li class="mobile-menu__item"><a href="treatment.html" class="mobile-menu__link">Лечение</a></li>
+        <li class="mobile-menu__item"><a href="aboutus.html" class="mobile-menu__link">О нас</a></li>
+        <li class="mobile-menu__item"><a href="contacts.html" class="mobile-menu__link">Контакты</a></li>
       </ul>
-
-      <div class="mobile-menu__footer">
-        <a href="https://instagram.com" target="_blank" class="mobile-menu__insta">
-          <img src="./img/insta.svg" alt="Instagram">
-        </a>
-      </div>
     </div>
   </header>
 
-  <main class="main-content">
+  <main>
+
 
     <section class="about" id="about">
-      <div class="container about__container">
+      <div class="about__container container">
         <div class="about__content">
+
           <div class="about__info">
-            <p>Немного про нас</p>
+            <p class="about__subtitle">Немного про нас</p>
             <h2 class="about__title">Отдых и оздоровление в лечебных водах</h2>
           </div>
+
           <div class="about__wrapper">
-            <div class="about__desc">Санаторий "Шипа су" - это райский уголок среди пустынной местности Туркестана.
+            <div class="about__desc">
+              Санаторий "Шипа су" - это райский уголок среди пустынной местности Туркестана.
               Местные нередко называют эту территорию
               Оазисом и мечтают искупаться в роскошном бассейне. Что уж говорить о местной минеральной воде, которая
               излечила уже не
-              одну тысячу довольных постояльцев.<br />
-              <br />
+              одну тысячу довольных постояльцев.<br /><br />
               Благодаря наличию уникальных природных лечебных факторов и развитой инфраструктуре, квалифицированный
               персонал санатория
-              всегда найдет для Вас оптимальное сочетание эффективного лечения и приятного отдыха.<br />
-              <br />
+              всегда найдет для Вас оптимальное сочетание эффективного лечения и приятного отдыха.<br /><br />
               Здоровое сбалансированное питание, комфортные условия проживания, широкий спектр СПА-услуг и сервиса
               позволят получить
               неисчерпаемый заряд бодрости, восстановят силы и продлят молодость.
             </div>
-            <img src="./img/lechenie.png"
-              alt="Лечение в санатории Шипасу — оздоровление с использованием минеральных вод">
+
+            <div class="about__image">
+              <img src="./img/lechenie.png"
+                alt="Лечение в санатории Шипасу — оздоровление с использованием минеральных вод" class="about__img">
+            </div>
           </div>
+
         </div>
+      </div>
     </section>
 
-    <section class="sec-contacts">
-      <div class="sec-inner container">
-        <div class="left-block">
-          <!--  <img src="./img/contacts-img.png" alt="Картинка"> -->
-          <div class="info-box info-box-page2">
-            <div class="info-box-element">
-              <h4>Телефон</h4>
-              <p>+996 (509) 04-23-45</p>
+    <section class="contacts">
+      <div class="contacts__inner container">
+        <div class="contacts__left">
+          <img class="contacts__image" src="./img/contacts-img.png" alt="Картинка" />
+
+          <div class="contacts__info">
+            <div class="contacts__info-item">
+              <h4 class="contacts__info-title">Телефон</h4>
+              <p class="contacts__info-text">+996 (509) 04-23-45</p>
             </div>
-            <div class="info-box-element">
-              <h4>Email</h4>
-              <p>shipasu@mail.kz</p>
+            <div class="contacts__info-item">
+              <h4 class="contacts__info-title">Email</h4>
+              <p class="contacts__info-text">shipasu@mail.kz</p>
             </div>
-            <div class="info-box-element">
-              <h4>Адрес</h4>
-              <p>Туркестанская область, город Туркестан<br />
-                157 квартал, здание №037</p>
+            <div class="contacts__info-item">
+              <h4 class="contacts__info-title">Адрес</h4>
+              <p class="contacts__info-text">
+                Туркестанская область, город Туркестан<br />
+                157 квартал, здание №037
+              </p>
             </div>
           </div>
         </div>
 
-        <div class="right-block">
-          <h2>Свяжитесь с нами</h2>
-          <p>
+        <div class="contacts__right">
+          <h2 class="contacts__title">Свяжитесь с нами</h2>
+          <p class="contacts__description">
             Мы с радостью ответим на все ваши вопросы и поможем в выборе.
           </p>
         </div>
@@ -156,27 +170,30 @@
 
   </main>
 
-  <footer>
-    <div class="container footer-container">
+  <footer class="footer">
+    <div class="footer__inner container">
 
       <!-- Колонка 1 -->
-      <div class="footer-column">
-        <div class="logo"><a href="/index.html"><img src="./img/logo.svg" alt=""></a></div>
-        <ul>
-          <li><a href="aboutus.html">О нас</a></li>
-          <li><a href="treatment.html">Лечение</a></li>
-          <li><a href="recognitions.html">Развлечения</a></li>
-          <li><a href="cosmetology.html">Косметология</a></li>
-          <li><a href="contacts.html">Контакты</a></li>
+      <div class="footer__column footer__column--main">
+        <div class="footer__logo">
+          <a class="footer__logo-link" href="/index.html">
+            <img class="footer__logo-image" src="./img/logo.svg" alt="Логотип Shipasu">
+          </a>
+        </div>
+        <ul class="footer__nav">
+          <li class="footer__nav-item"><a class="footer__nav-link" href="aboutus.html">О нас</a></li>
+          <li class="footer__nav-item"><a class="footer__nav-link" href="treatment.html">Лечение</a></li>
+          <li class="footer__nav-item"><a class="footer__nav-link" href="recognitions.html">Развлечения</a></li>
+          <li class="footer__nav-item"><a class="footer__nav-link" href="cosmetology.html">Косметология</a></li>
+          <li class="footer__nav-item"><a class="footer__nav-link" href="contacts.html">Контакты</a></li>
         </ul>
-
-        <p>&copy; Shipasu. Все права защищены, 2025</p>
+        <p class="footer__copy">&copy; Shipasu. Все права защищены, 2025</p>
       </div>
 
       <!-- Колонка 2 -->
-      <div class="footer-column">
-        <h4>Адрес</h4>
-        <div class="address">
+      <div class="footer__column footer__column--address">
+        <h4 class="footer__title">Адрес</h4>
+        <div class="footer__address">
           Туркестанская область,<br />
           город Туркестан<br />
           157 квартал, здание № 037
@@ -184,24 +201,28 @@
       </div>
 
       <!-- Колонка 3 -->
-      <div class="footer-column">
-        <h4>Контакты</h4>
-        <div class="contact-info">
-          <ul>
-            <li>+77717000998</li>
-            <li>+77023358888</li>
-            <li>+7(725)33 7-10-67</li>
-            <li>shipa_su18@mail.ru</li>
-          </ul>
-        </div>
+      <div class="footer__column footer__column--contacts">
+        <h4 class="footer__title">Контакты</h4>
+        <ul class="footer__contacts">
+          <li class="footer__contacts-item">+77717000998</li>
+          <li class="footer__contacts-item">+77023358888</li>
+          <li class="footer__contacts-item">+7(725)33 7-10-67</li>
+          <li class="footer__contacts-item">shipa_su18@mail.ru</li>
+        </ul>
       </div>
 
       <!-- Колонка 4 -->
-      <div class="footer-column">
-        <h4>Подпишитесь</h4>
-        <div class="social-icons">
-          <a href="#" title="Facebook"><img src="./img/fb.svg" alt=""> <span>/shipasu.kz</span></a>
-          <a href="#" title="Instagram"><img src="./img/insta.svg" alt=""> <span>/shipasu.kz</span></a>
+      <div class="footer__column footer__column--social">
+        <h4 class="footer__title">Подпишись на нас</h4>
+        <div class="footer__social">
+          <a class="footer__social-link" href="#" title="Facebook">
+            <img class="footer__social-icon" src="./img/fb.svg" alt="Facebook" />
+            <span class="footer__social-text">/shipasu.kz</span>
+          </a>
+          <a class="footer__social-link" href="#" title="Instagram">
+            <img class="footer__social-icon" src="./img/insta.svg" alt="Instagram" />
+            <span class="footer__social-text">/shipasu.kz</span>
+          </a>
         </div>
       </div>
 

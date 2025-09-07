@@ -3,12 +3,14 @@ $(document).ready(function () {
   const scrollDownBtn = document.getElementById("scrollDownBtn");
 
   // Функция прокрутки страницы вниз
-  scrollDownBtn.addEventListener("click", () => {
-    window.scrollTo({
-      top: window.innerHeight, // Прокрутка на 1 экран вниз
-      behavior: "smooth", // Плавная прокрутка
+  if (scrollDownBtn) {
+    scrollDownBtn.addEventListener("click", () => {
+      window.scrollTo({
+        top: window.innerHeight, // Прокрутка на 1 экран вниз
+        behavior: "smooth", // Плавная прокрутка
+      });
     });
-  });
+  }
 
   /* --- Механизм бронирования --- */
   let departurePicker = null; // глобальная переменная
@@ -637,76 +639,78 @@ $(document).ready(function () {
     ".form__select .form__select-trigger"
   );
 
-  // Навешиваем на все кнопки
-  openPopupBtns.forEach((btn) => {
-    btn.addEventListener("click", () => {
-      document.getElementById("popupArrival").textContent =
-        arrivalInput.value || "—";
-      document.getElementById("popupDeparture").textContent =
-        departureInput.value || "—";
-      document.getElementById("popupGuests").textContent =
-        guestsSelect.textContent || "—";
+  if (closePopupBtn && openPopupBtns && popupOverlay) {
+    // Навешиваем на все кнопки
+    openPopupBtns.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        document.getElementById("popupArrival").textContent =
+          arrivalInput.value || "—";
+        document.getElementById("popupDeparture").textContent =
+          departureInput.value || "—";
+        document.getElementById("popupGuests").textContent =
+          guestsSelect.textContent || "—";
 
-      popupOverlay.classList.add("active");
-      document.body.style.overflow = "hidden";
+        popupOverlay.classList.add("active");
+        document.body.style.overflow = "hidden";
+      });
     });
-  });
 
-  // Закрытие popup
-  closePopupBtn.addEventListener("click", () => {
-    popupOverlay.classList.remove("active");
-    document.body.style.overflow = "";
-    popupSuccess.style.display = "none";
-  });
-
-  popupOverlay.addEventListener("click", (e) => {
-    if (e.target === popupOverlay) {
+    // Закрытие popup
+    closePopupBtn.addEventListener("click", () => {
       popupOverlay.classList.remove("active");
       document.body.style.overflow = "";
       popupSuccess.style.display = "none";
-    }
-  });
+    });
 
-  // Валидация и отправка формы
-  document.getElementById("popupSubmit").addEventListener("click", (e) => {
-    e.preventDefault();
+    popupOverlay.addEventListener("click", (e) => {
+      if (e.target === popupOverlay) {
+        popupOverlay.classList.remove("active");
+        document.body.style.overflow = "";
+        popupSuccess.style.display = "none";
+      }
+    });
 
-    const name = document.getElementById("popupName").value.trim();
-    const email = document.getElementById("popupEmail").value.trim();
-    const phone = document.getElementById("popupPhone").value.trim();
-    const comment = document.getElementById("popupComment").value.trim();
-    const arrival = document.getElementById("popupArrival").textContent;
-    const departure = document.getElementById("popupDeparture").textContent;
-    const guests = document.getElementById("popupGuests").textContent;
+    // Валидация и отправка формы
+    document.getElementById("popupSubmit").addEventListener("click", (e) => {
+      e.preventDefault();
 
-    if (!name || !email || !phone) {
-      alert("Пожалуйста, заполните все обязательные поля!");
-      return;
-    }
+      const name = document.getElementById("popupName").value.trim();
+      const email = document.getElementById("popupEmail").value.trim();
+      const phone = document.getElementById("popupPhone").value.trim();
+      const comment = document.getElementById("popupComment").value.trim();
+      const arrival = document.getElementById("popupArrival").textContent;
+      const departure = document.getElementById("popupDeparture").textContent;
+      const guests = document.getElementById("popupGuests").textContent;
 
-    // EmailJS отправка
-    const templateParams = {
-      name,
-      email,
-      phone,
-      comment,
-      arrival,
-      departure,
-      guests,
-    };
+      if (!name || !email || !phone) {
+        alert("Пожалуйста, заполните все обязательные поля!");
+        return;
+      }
 
-    emailjs
-      .send("service_me74cro", "template_quxeqcr", templateParams)
-      .then(() => {
-        popupSuccess.style.display = "block";
-        document.querySelector(".popup__form").style.display = "none";
-        setTimeout(() => {
-          popupOverlay.classList.remove("active");
-          document.body.style.overflow = "";
-          popupSuccess.style.display = "none";
-          document.querySelector(".popup__form").style.display = "block";
-        }, 1000);
-      })
-      .catch((err) => alert("Ошибка отправки: " + err.text));
-  });
+      // EmailJS отправка
+      const templateParams = {
+        name,
+        email,
+        phone,
+        comment,
+        arrival,
+        departure,
+        guests,
+      };
+
+      emailjs
+        .send("service_me74cro", "template_quxeqcr", templateParams)
+        .then(() => {
+          popupSuccess.style.display = "block";
+          document.querySelector(".popup__form").style.display = "none";
+          setTimeout(() => {
+            popupOverlay.classList.remove("active");
+            document.body.style.overflow = "";
+            popupSuccess.style.display = "none";
+            document.querySelector(".popup__form").style.display = "block";
+          }, 1000);
+        })
+        .catch((err) => alert("Ошибка отправки: " + err.text));
+    });
+  }
 });
