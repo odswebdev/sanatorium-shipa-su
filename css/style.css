@@ -53,7 +53,8 @@ h3 {
 .page__aboutus .nav__link,
 .page__contacts .nav__link,
 .page__treatment .nav__link,
-.page__cosmetology .nav__link {
+.page__cosmetology .nav__link,
+.page__rooms .nav__link {
   color: #555555;
 }
 
@@ -61,7 +62,8 @@ h3 {
 .page__aboutus .book-btn,
 .page__contacts .book-btn,
 .page__treatment .book-btn,
-.page__cosmetology .book-btn {
+.page__cosmetology .book-btn,
+.page__rooms .book-btn {
   padding: 15px 30px;
   gap: 10px;
   width: 267px;
@@ -74,6 +76,15 @@ h3 {
     #e1963c;
   border-radius: 30px;
   font-size: 18px;
+}
+
+.page__recognitions .top__wrapper .book-btn:hover,
+.page__aboutus .book-btn:hover,
+.page__contacts .book-btn:hover,
+.page__treatment .book-btn:hover,
+.page__cosmetology .book-btn:hover,
+.page__rooms .book-btn:hover {
+  background: #e1963c;
 }
 
 .page__recognitions .top__wrapper {
@@ -91,6 +102,105 @@ h3 {
   text-align: center;
 }
 
+.page__aboutus .about {
+  padding-top: 0px;
+}
+
+.page__rooms .contacts,
+.page__aboutus .contacts,
+.page__treatment .contacts,
+.page__cosmetology .contacts,
+.page__recognitions .contacts {
+  margin-bottom: 0px;
+}
+
+.page__recognitions .contacts {
+  padding-top: 95px;
+  padding-bottom: 110px;
+}
+
+.page__rooms .contacts__inner,
+.page__aboutus .contacts__inner,
+.page__treatment .contacts__inner,
+.page__cosmetology .contacts__inner,
+.page__recognitions .contacts__inner {
+  flex-wrap: nowrap;
+  align-items: center;
+}
+
+.page__recognitions .contacts__left,
+.contacts__right {
+  flex: 1 1 50%;
+}
+
+.page__cosmetology .contacts__left,
+.contacts__right {
+  flex: 1 1 50%;
+}
+
+.page__treatment .contacts__left,
+.contacts__right {
+  flex: 1 1 50%;
+}
+
+.page__aboutus .contacts__left,
+.contacts__right {
+  flex: 1 1 50%;
+}
+
+.page__rooms .contacts__left,
+.contacts__right {
+  flex: 1 1 50%;
+}
+
+.page__rooms .rooms__title {
+  justify-content: center;
+  text-align: center;
+}
+
+.page__rooms .rooms__title::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 60%;
+  transform: translateY(-50%);
+  width: 24%;
+  height: 2px;
+  background-color: #f5a623;
+}
+
+.page__rooms .rooms__title::after {
+  width: 24%;
+}
+
+.page__rooms .contacts__info,
+.page__aboutus .contacts__info,
+.page__treatment .contacts__info,
+.page__cosmetology .contacts__info,
+.page__recognitions .contacts__info {
+  position: relative;
+  top: 0;
+  left: 0;
+}
+
+.hero-slider__pagination {
+  margin-top: 20px; /* отступ от слайдера вниз */
+  text-align: center;
+  position: relative;
+}
+
+.hero-slider__pagination .swiper-pagination-bullet {
+  background: #e1963c; /* цвет точек */
+  opacity: 0.3;
+  transition: opacity 0.3s, transform 0.3s;
+}
+
+.hero-slider__pagination .swiper-pagination-bullet-active {
+  background: #e1963c; /* активная точка */
+  opacity: 1;
+  transform: scale(1.2); /* лёгкое увеличение */
+}
+
 /* --- Header --- */
 
 .header {
@@ -102,6 +212,20 @@ h3 {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.header__logo-cont {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: center;
+}
+
+.mobile-menu__logo-cont {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: center;
 }
 
 .header__logo-link img {
@@ -129,7 +253,7 @@ h3 {
 }
 
 .nav__link:hover {
-  color: #fe5;
+  color: #e1963c !important;
 }
 
 /* --- Book Button --- */
@@ -353,11 +477,11 @@ body.menu-open {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  min-height: 100vh; /* заполняет экран */
+  min-height: 100vh;
 }
 .hero__content {
   margin-top: 0px;
-  max-height: 100vh; /* никогда не больше видимой области */
+  max-height: 100vh;
   overflow: hidden;
   max-width: 1020px;
 }
@@ -741,7 +865,7 @@ select {
 
 .hero__scroll-down-btn {
   position: absolute;
-  bottom: -150px;
+  bottom: 20px;
   left: 50%;
   transform: translateX(-50%);
   background: #c4c4c4;
@@ -778,6 +902,7 @@ select {
 /*** ABOUT ***/
 
 .about {
+  padding-top: 160px;
   padding-bottom: 160px;
 }
 .about__info p {
@@ -1012,7 +1137,7 @@ select {
   right: 0%;
   top: 60%;
   transform: translateY(-50%);
-  width: 80%;
+  width: 30%;
   height: 2px;
   background-color: #f5a623;
 }
@@ -1196,7 +1321,7 @@ select {
   left: 50%;
   background: #ffe5cf;
   padding: 60px 20px 50px 85px;
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  /* box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1); */
   display: flex;
   gap: 50px;
   flex-direction: column;
@@ -1233,6 +1358,29 @@ select {
   margin-bottom: 40px;
 }
 
+.map-section-title {
+  font-size: 56px;
+  font-weight: bold;
+  margin-bottom: 60px;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.map-section-title::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 60%;
+  transform: translateY(-50%);
+  width: 50%;
+  height: 2px;
+  background-color: #f5a623;
+}
+
+.sec-map {
+  margin-bottom: 70px;
+}
+
 .footer {
   background-color: #2a2a2a;
   padding: 50px 20px 30px;
@@ -1242,6 +1390,11 @@ select {
 }
 .footer__logo {
   margin-bottom: 40px;
+}
+.footer__logo-cont {
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 .footer__inner {
   margin: 0 auto;
@@ -1281,7 +1434,7 @@ select {
   transition: color 0.3s;
 }
 .footer__nav-link:hover {
-  color: #000;
+  color: #e1963c;
 }
 .footer__contacts {
   list-style: none;
@@ -1350,6 +1503,10 @@ select {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.hero__wrapper {
+  margin-bottom: 60px;
 }
 
 .hero__title {
@@ -1434,6 +1591,7 @@ select {
 .hero-slider {
   width: 100%;
   padding: 0;
+  margin-bottom: 65px;
 }
 
 .hero-slider__container {
@@ -1488,7 +1646,7 @@ select {
   font-family: "PlayfairDisplay";
   font-size: 72px;
   font-weight: 700;
-  margin-bottom: 55px;
+  margin-bottom: 65px;
   position: relative;
   display: flex;
   align-items: center;
@@ -1516,18 +1674,19 @@ select {
   width: 100%;
 }
 .rooms__grid > .rooms__item > .rooms__image {
-  flex: 1 1 40%;
+  flex: 0 0 50%;
 }
 .rooms__grid > .rooms__item > .rooms__image img {
   width: 100%;
   object-fit: cover;
 }
 .rooms__grid > .room__item > .rooms__content {
-  flex: 1 1 55%;
+  flex: 1 1 50%;
 }
 .rooms__name {
   font-family: "PlayfairDisplay";
-  font-size: 32px;
+  font-size: 36px;
+  color: #010101;
   margin-bottom: 32px;
 }
 .rooms__price {
@@ -1541,9 +1700,8 @@ select {
 .rooms__characteristic {
   font-size: 22px;
   line-height: 1.5;
-  margin-bottom: 34px;
 }
-.rooms__price > span {
+.rooms__price {
   font-family: "Playfair Display", sans-serif;
   font-size: 40px;
 }
@@ -1757,7 +1915,7 @@ select {
 }
 
 .reserve__description p:last-of-type {
-  margin-bottom: 70px;
+  margin-bottom: 10px;
 }
 
 .oasis {
@@ -1791,11 +1949,11 @@ select {
 }
 
 .oasis__description p:last-of-type {
-  margin-bottom: 70px;
+  margin-bottom: 10px;
 }
 
 .mausoleumh {
-  padding-bottom: 70px;
+  /*  padding-bottom: 70px; */
 }
 
 .mausoleumh__item {
@@ -1803,6 +1961,10 @@ select {
   flex-direction: row;
   gap: 30px;
   align-items: flex-start;
+  /* margin-bottom: 60px; */
+}
+
+.mausoleumh__item--info {
   margin-bottom: 60px;
 }
 

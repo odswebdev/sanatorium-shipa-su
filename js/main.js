@@ -215,6 +215,25 @@ $(document).ready(function () {
     });
   }
 
+  const select1 = document.querySelector(".form__select");
+  if (select1) {
+    const selected = select1.querySelector(".form__select-trigger");
+    const options = select1.querySelector(".custom-options");
+    const optionItems = select1.querySelectorAll(".form__option");
+
+    selected.addEventListener("click", () => {
+      options.style.display =
+        options.style.display === "block" ? "none" : "block";
+    });
+
+    optionItems.forEach((option) => {
+      option.addEventListener("click", () => {
+        selected.innerHTML = option.innerHTML;
+        options.style.display = "none";
+      });
+    });
+  }
+
   /**** ******/
 
   const readMoreBtn = document.getElementById("readMoreBtn");
@@ -244,10 +263,6 @@ $(document).ready(function () {
 
   const heroSlider = new Swiper(".hero-slider__swiper", {
     loop: true,
-    navigation: {
-      nextEl: ".hero-slider__button--next",
-      prevEl: ".hero-slider__button--prev",
-    },
     slidesPerView: 1,
     spaceBetween: 20,
     breakpoints: {
@@ -257,6 +272,10 @@ $(document).ready(function () {
       1024: {
         slidesPerView: 1,
       },
+    },
+    pagination: {
+      el: ".hero-slider__pagination",
+      clickable: true,
     },
   });
 
@@ -480,22 +499,6 @@ $(document).ready(function () {
       },
     },
   });
-
-  /* const select1 = document.querySelector('.custom-select');
-  const selected = select1.querySelector('.selected');
-  const options = select1.querySelector('.options');
-  const optionItems = select1.querySelectorAll('.option');
-
-  selected.addEventListener('click', () => {
-    options.style.display = options.style.display === 'block' ? 'none' : 'block';
-  });
-
-  optionItems.forEach(option => {
-    option.addEventListener('click', () => {
-      selected.innerHTML = option.innerHTML;
-      options.style.display = 'none';
-    });
-  }); */
 
   /* function setDefaultArrivalDate() {
     const today = new Date();
