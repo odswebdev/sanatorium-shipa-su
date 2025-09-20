@@ -27,8 +27,12 @@ $(document).ready(function () {
     ".form__field.form__field--departure"
   );
 
+  console.log("arrivalField:", arrivalField);
+  console.log("departureField:", departureField);
+
   // Функция позиционирования календаря
   function positionCalendar(field, picker) {
+    if (!field || !picker || !picker.$datepicker) return; // защита
     const rect = field.getBoundingClientRect();
     const calendarEl = picker.$datepicker;
     calendarEl.style.position = "fixed";
@@ -42,7 +46,7 @@ $(document).ready(function () {
     const arrivalCalendarContainer = document.createElement("div");
     document.body.appendChild(arrivalCalendarContainer);
 
-    const arrivalPicker = new AirDatepicker(arrivalInput, {
+    arrivalPicker = new AirDatepicker(arrivalInput, {
       container: arrivalCalendarContainer,
       startDate: new Date(),
       autoClose: true,
@@ -102,7 +106,7 @@ $(document).ready(function () {
       if (arrivalPicker.visible) arrivalPicker.hide();
       else {
         arrivalPicker.show();
-        positionCalendar(arrivalField, arrivalPicker);
+        setTimeout(() => positionCalendar(arrivalField, arrivalPicker), 0);
       }
     });
 
@@ -197,7 +201,7 @@ $(document).ready(function () {
       if (departurePicker.visible) departurePicker.hide();
       else {
         departurePicker.show();
-        positionCalendar(departureField, departurePicker);
+        setTimeout(() => positionCalendar(departureField, departurePicker), 0);
       }
     });
 
