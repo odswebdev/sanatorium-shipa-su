@@ -13,7 +13,7 @@ $(document).ready(function () {
   }
 
   /* --- Механизм бронирования --- */
-  let departurePicker = null; // глобальная переменная
+  let departurePicker = null;
   let arrivalPicker = null;
   let selectedArrival = null;
   let selectedDeparture = null;
@@ -27,9 +27,9 @@ $(document).ready(function () {
     ".form__field.form__field--departure"
   );
 
-  // Функция позиционирования календаря
+  // --- Позиционирование календаря ---
   function positionCalendar(field, picker) {
-    if (!field || !picker || !picker.$datepicker) return; // защита
+    if (!field || !picker || !picker.$datepicker) return;
     const rect = field.getBoundingClientRect();
     const calendarEl = picker.$datepicker;
     calendarEl.style.position = "fixed";
@@ -39,12 +39,13 @@ $(document).ready(function () {
     calendarEl.style.zIndex = 9999;
   }
 
+  // --- Календарь заезда ---
   if (arrivalInput && arrivalField) {
-    // const arrivalCalendarContainer = document.createElement("div");
-    // document.body.appendChild(arrivalCalendarContainer);
+    const arrivalCalendarContainer = document.createElement("div");
+    document.body.appendChild(arrivalCalendarContainer);
 
     arrivalPicker = new AirDatepicker(arrivalInput, {
-      //   container: arrivalCalendarContainer,
+      container: arrivalCalendarContainer,
       startDate: new Date(),
       autoClose: true,
       minDate: new Date(),
@@ -53,12 +54,20 @@ $(document).ready(function () {
       },
       onSelect({ date }) {
         selectedArrival = date || null;
-        if (
-          selectedDeparture &&
-          selectedArrival &&
-          selectedDeparture < selectedArrival
-        ) {
-          selectedDeparture = null;
+
+        if (selectedArrival) {
+          // если выезд пустой → сразу ставим +1 день
+          if (!selectedDeparture || selectedDeparture <= selectedArrival) {
+            const nextDay = new Date(selectedArrival);
+            nextDay.setDate(nextDay.getDate() + 1);
+            selectedDeparture = nextDay;
+            departurePicker.selectDate(nextDay);
+          }
+
+          // открыть календарь выезда
+          if (departurePicker) {
+            departurePicker.show();
+          }
         }
       },
     });
@@ -69,32 +78,29 @@ $(document).ready(function () {
 
     arrivalField.addEventListener("click", (e) => {
       e.stopPropagation();
-      if (arrivalPicker.visible) arrivalPicker.hide();
-      else arrivalPicker.show();
+      if (arrivalPicker.visible) {
+        arrivalPicker.hide();
+      } else {
+        arrivalPicker.show();
+      }
     });
 
     document.addEventListener("click", () => {
       if (arrivalPicker.visible) arrivalPicker.hide();
     });
-
-    window.addEventListener("resize", () => {
-      if (arrivalPicker.visible) positionCalendar(arrivalField, arrivalPicker);
-    });
-    window.addEventListener("scroll", () => {
-      if (arrivalPicker.visible) positionCalendar(arrivalField, arrivalPicker);
-    });
   }
 
   // --- Календарь выезда ---
   if (departureInput && departureField) {
-    //  const departureCalendarContainer = document.createElement("div");
-    //  document.body.appendChild(departureCalendarContainer);
+    const departureCalendarContainer = document.createElement("div");
+    document.body.appendChild(departureCalendarContainer);
 
     departurePicker = new AirDatepicker(departureInput, {
-      //   container: departureCalendarContainer,
+      container: departureCalendarContainer,
       startDate: new Date(),
       autoClose: true,
       minDate: new Date(),
+      showOn: "",
       onShow() {
         positionCalendar(departureField, departurePicker);
       },
@@ -103,7 +109,6 @@ $(document).ready(function () {
       },
       onRenderCell({ date, cellType }) {
         if (cellType !== "day") return;
-
         const t = date.getTime();
         const arrivalTime = selectedArrival ? selectedArrival.getTime() : null;
         const departureTime = selectedDeparture
@@ -130,14 +135,16 @@ $(document).ready(function () {
 
     departureField.addEventListener("click", (e) => {
       e.stopPropagation();
-      if (departurePicker.visible) departurePicker.hide();
-      else departurePicker.show();
+      if (departurePicker.visible) {
+        departurePicker.hide();
+      } else {
+        departurePicker.show();
+      }
     });
 
     document.addEventListener("click", () => {
       if (departurePicker.visible) departurePicker.hide();
     });
-
     window.addEventListener("resize", () => {
       if (departurePicker.visible)
         positionCalendar(departureField, departurePicker);
