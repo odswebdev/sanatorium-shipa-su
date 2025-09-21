@@ -40,11 +40,11 @@ $(document).ready(function () {
   }
 
   if (arrivalInput && arrivalField) {
-    const arrivalCalendarContainer = document.createElement("div");
-    document.body.appendChild(arrivalCalendarContainer);
+    // const arrivalCalendarContainer = document.createElement("div");
+    // document.body.appendChild(arrivalCalendarContainer);
 
     arrivalPicker = new AirDatepicker(arrivalInput, {
-      container: arrivalCalendarContainer,
+      //   container: arrivalCalendarContainer,
       startDate: new Date(),
       autoClose: true,
       minDate: new Date(),
@@ -87,11 +87,11 @@ $(document).ready(function () {
 
   // --- Календарь выезда ---
   if (departureInput && departureField) {
-    const departureCalendarContainer = document.createElement("div");
-    document.body.appendChild(departureCalendarContainer);
+    //  const departureCalendarContainer = document.createElement("div");
+    //  document.body.appendChild(departureCalendarContainer);
 
     departurePicker = new AirDatepicker(departureInput, {
-      container: departureCalendarContainer,
+      //   container: departureCalendarContainer,
       startDate: new Date(),
       autoClose: true,
       minDate: new Date(),
