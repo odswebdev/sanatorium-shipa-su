@@ -51,48 +51,17 @@ $(document).ready(function () {
       startDate: new Date(),
       autoClose: true,
       minDate: new Date(),
-      buttons: [
-        {
-          content: "Сегодня",
-          onClick(dp) {
-            const today = new Date();
-            dp.selectDate(today);
-            selectedArrival = today;
-            if (
-              departurePicker &&
-              selectedDeparture &&
-              selectedDeparture < selectedArrival
-            ) {
-              selectedDeparture = null;
-              departurePicker.update();
-            }
-            dp.update();
-          },
-        },
-        {
-          content: "Очистить",
-          onClick(dp) {
-            dp.clear();
-            selectedArrival = null;
-            //   if (departurePicker) departurePicker.update();
-          },
-        },
-      ],
+      onShow() {
+        positionCalendar(arrivalField, arrivalPicker);
+      },
       onSelect({ date }) {
-        selectedArrival = date || null; // выбранная дата заезда
-
-        // Если дата выезда раньше заезда — сброс выезда
+        selectedArrival = date || null;
         if (
           selectedDeparture &&
           selectedArrival &&
           selectedDeparture < selectedArrival
         ) {
           selectedDeparture = null;
-        }
-
-        // Обновляем календарь выезда, чтобы подсветить диапазон
-        if (departurePicker) {
-          //    departurePicker.update();
         }
       },
     });
@@ -104,10 +73,7 @@ $(document).ready(function () {
     arrivalField.addEventListener("click", (e) => {
       e.stopPropagation();
       if (arrivalPicker.visible) arrivalPicker.hide();
-      else {
-        arrivalPicker.show();
-        setTimeout(() => positionCalendar(arrivalField, arrivalPicker), 0);
-      }
+      else arrivalPicker.show(); // позиционирование произойдет в onShow
     });
 
     document.addEventListener("click", () => {
@@ -132,42 +98,11 @@ $(document).ready(function () {
       startDate: new Date(),
       autoClose: true,
       minDate: new Date(),
-      visible: false,
-      showOn: "",
-      buttons: [
-        {
-          content: "Сегодня",
-          onClick(dp) {
-            const today = new Date();
-            dp.selectDate(today); // выбираем сегодняшнюю дату
-            dp.show(); // открываем календарь
-            if (dp === departurePicker) {
-              selectedDeparture = today;
-            } else if (dp === arrivalPicker) {
-              selectedArrival = today;
-              // если выезд раньше заезда — сброс
-              if (selectedDeparture && selectedDeparture < selectedArrival) {
-                selectedDeparture = null;
-                if (departurePicker) departurePicker.update();
-              }
-            }
-            dp.update(); // обновляем отображение
-          },
-        },
-        {
-          content: "Очистить",
-          onClick(dp) {
-            dp.clear();
-            if (dp === departurePicker) selectedDeparture = null;
-            if (dp === arrivalPicker) selectedArrival = null;
-            //   if (departurePicker) departurePicker.update();
-            //  if (arrivalPicker) arrivalPicker.update();
-          },
-        },
-      ],
+      onShow() {
+        positionCalendar(departureField, departurePicker);
+      },
       onSelect({ date }) {
         selectedDeparture = date || null;
-        //   departurePicker.update();
       },
       onRenderCell({ date, cellType }) {
         if (cellType !== "day") return;
@@ -199,10 +134,7 @@ $(document).ready(function () {
     departureField.addEventListener("click", (e) => {
       e.stopPropagation();
       if (departurePicker.visible) departurePicker.hide();
-      else {
-        departurePicker.show();
-        setTimeout(() => positionCalendar(departureField, departurePicker), 0);
-      }
+      else departurePicker.show(); // позиционирование произойдет в onShow
     });
 
     document.addEventListener("click", () => {
