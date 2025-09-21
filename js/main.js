@@ -27,9 +27,6 @@ $(document).ready(function () {
     ".form__field.form__field--departure"
   );
 
-  console.log("arrivalField:", arrivalField);
-  console.log("departureField:", departureField);
-
   // Функция позиционирования календаря
   function positionCalendar(field, picker) {
     if (!field || !picker || !picker.$datepicker) return; // защита
@@ -73,8 +70,7 @@ $(document).ready(function () {
     arrivalField.addEventListener("click", (e) => {
       e.stopPropagation();
       if (arrivalPicker.visible) arrivalPicker.hide();
-      else arrivalInput.focus();
-      // позиционирование произойдет в onShow
+      else arrivalPicker.show({ target: arrivalInput });
     });
 
     document.addEventListener("click", () => {
@@ -135,7 +131,7 @@ $(document).ready(function () {
     departureField.addEventListener("click", (e) => {
       e.stopPropagation();
       if (departurePicker.visible) departurePicker.hide();
-      else departureInput.focus(); // позиционирование произойдет в onShow
+      else departurePicker.show({ target: departureInput });
     });
 
     document.addEventListener("click", () => {
