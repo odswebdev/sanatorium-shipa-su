@@ -70,7 +70,7 @@ $(document).ready(function () {
     arrivalField.addEventListener("click", (e) => {
       e.stopPropagation();
       if (arrivalPicker.visible) arrivalPicker.hide();
-      else arrivalPicker.show({ target: arrivalInput });
+      else arrivalPicker.show();
     });
 
     document.addEventListener("click", () => {
@@ -131,7 +131,7 @@ $(document).ready(function () {
     departureField.addEventListener("click", (e) => {
       e.stopPropagation();
       if (departurePicker.visible) departurePicker.hide();
-      else departurePicker.show({ target: departureInput });
+      else departurePicker.show();
     });
 
     document.addEventListener("click", () => {
