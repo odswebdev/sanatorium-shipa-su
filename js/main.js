@@ -73,7 +73,8 @@ $(document).ready(function () {
     arrivalField.addEventListener("click", (e) => {
       e.stopPropagation();
       if (arrivalPicker.visible) arrivalPicker.hide();
-      else arrivalPicker.show(); // позиционирование произойдет в onShow
+      else arrivalInput.focus();
+      // позиционирование произойдет в onShow
     });
 
     document.addEventListener("click", () => {
@@ -134,7 +135,7 @@ $(document).ready(function () {
     departureField.addEventListener("click", (e) => {
       e.stopPropagation();
       if (departurePicker.visible) departurePicker.hide();
-      else departurePicker.show(); // позиционирование произойдет в onShow
+      else departureInput.focus(); // позиционирование произойдет в onShow
     });
 
     document.addEventListener("click", () => {
